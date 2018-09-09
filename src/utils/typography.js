@@ -1,15 +1,23 @@
 import Typography from 'typography'
-import Wordpress2016 from 'typography-theme-wordpress-2016'
+import lincolnTheme from 'typography-theme-Lincoln'
 
-Wordpress2016.overrideThemeStyles = () => ({
+lincolnTheme.overrideThemeStyles = () => ({
   'a.gatsby-resp-image-link': {
     boxShadow: 'none',
   },
+  'h1,h2,h3': {
+    fontFamily: 'Nunito',
+    fontWeight: '700',
+  },
+  p: {
+    fontFamily: 'Nunito',
+    fontWeight: '400',
+  },
 })
 
-delete Wordpress2016.googleFonts
+delete lincolnTheme.googleFonts
 
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(lincolnTheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {

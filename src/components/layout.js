@@ -1,9 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import '../components/splitStyles.css'
-
+import styled from 'styled-components'
 import { rhythm, scale } from '../utils/typography'
-import SplitPane from 'react-split-pane'
+
+import mockup from '../assets/mockup-1.png'
+import background from '../assets/bg/beach.jpg'
+import google from '../assets/google-play-badge.png'
+import Nav from './nav'
+
+const Wrapper = styled.div`
+  display: block;
+  /* @media (max-width: 700px) {
+    background-image: url(${background});
+    background-color: transparent;
+  } */
+`
+
+const Feature = styled.div`
+  display: inline-block;
+`
+// https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles#39196525
 
 class Template extends React.Component {
   render() {
@@ -13,64 +30,104 @@ class Template extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <SplitPane split="vertical" minSize={50} defaultSize={'50%'}>
+        <div
+          style={{
+            display: 'block',
+            // flex: 1,
+            flexDirection: 'column',
+            width: '100vw',
+            backgroundColor: '#161925',
+            clear: 'both',
+            // flex-flow: 'row wrap',
+          }}
+        >
+          <Nav />
           <div
             style={{
-              backgroundColor: '#161925',
-              height: '100%',
-              marginTop: 0,
-              // flexDirection: 'row',
-              // flex: 1,
-              // alignContent: 'center',
-              // alignItems: 'center',
-              // justifyContent: 'center',
+              flex: 1,
+              padding: rhythm(3),
+              // maxWidth: rhythm(24),
+              justifyContent: 'center',
+              height: '90vh',
+              minHeight: '90vh',
+              maxWidth: '100vw',
+              backgroundImage: 'url(' + background + ')',
+              backgroundSize: 'cover',
+              backgroundPosition: 'bottom',
             }}
           >
-            <h1
-              style={{
-                ...scale(1.5),
-                marginBottom: rhythm(1.5),
-                marginTop: 0,
-                color: '#fff',
-                alignSelf: 'center',
-              }}
-            >
-              <Link
+            <div style={{ display: 'inline-block' }}>
+              <h2
                 style={{
-                  boxShadow: 'none',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  textShadow: 'none',
-                  justifyContent: 'center',
+                  ...scale(2),
+                  color: '#fff',
+                  textAlign: 'left',
+                  maxWidth: rhythm(16),
                 }}
-                to={'/'}
               >
-                Patana
-              </Link>
-            </h1>
-            <h2 style={{ color: '#fff' }}>
-              Build better relationships. Auto-magically.
-            </h2>
-          </div>
-          <div>
-            <Link
+                Build better relationships.
+              </h2>
+              <p style={{ color: '#fff', maxWidth: rhythm(16) }}>
+                Patana can help you remember to call your granny. Text your
+                partner. Keep in touch with your friends from university. And
+                much more.
+              </p>
+              <img
+                src={google}
+                style={{
+                  maxWidth: rhythm(6),
+                  float: 'left',
+                  paddingLeft: 0,
+                }}
+              />
+            </div>
+            <div
               style={{
-                boxShadow: 'none',
-                textDecoration: 'none',
-                color: 'inherit',
+                display: 'inline-block',
+                float: 'right',
+                maxWidth: '30vw',
               }}
-              to={'/'}
             >
-              Patana
-            </Link>
+              <img
+                src={mockup}
+                style={{
+                  width: '100%',
+                  maxWidth: 'inherit',
+                  maxHeight: 'inherit',
+                }}
+              />
+            </div>
           </div>
-        </SplitPane>
+          <div
+            style={{
+              maxWidth: rhythm(48),
+              margin: '0 auto',
+              flex: 1,
+            }}
+          />
+          <h2
+            style={{
+              color: '#fff',
+              maxWidth: rhythm(16),
+              ...scale(1.5),
+            }}
+          >
+            Features
+          </h2>
+          <p
+            style={{
+              color: '#fff',
+              maxWidth: rhythm(16),
+            }}
+          >
+            this is a test
+          </p>
+        </div>
       )
     } else {
       header = (
         <h3
           style={{
-            // fontFamily: 'Nunito, sans-serif',
             marginTop: 0,
             marginBottom: rhythm(-1),
           }}
@@ -88,19 +145,7 @@ class Template extends React.Component {
         </h3>
       )
     }
-    return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          paddingTop: 0,
-        }}
-      >
-        {header}
-      </div>
-    )
+    return <Wrapper>{header}</Wrapper>
   }
 }
 

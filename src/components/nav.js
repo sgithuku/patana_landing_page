@@ -7,7 +7,7 @@ import logo from '../assets/logo/Wordmark - White.png'
 const MenuContainer = styled.div`
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
 `
 const Menu = styled.div`
   position: relative;

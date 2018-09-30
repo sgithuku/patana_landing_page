@@ -5,7 +5,7 @@ lincolnTheme.overrideThemeStyles = () => ({
   'a.gatsby-resp-image-link': {
     boxShadow: 'none',
   },
-  'h1,h2,h3': {
+  'h1,h2,h3,input,button': {
     fontFamily: 'Nunito',
     fontWeight: '700',
   },

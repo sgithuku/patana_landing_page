@@ -13,43 +13,40 @@ const FeaturesContainer = styled.div`
   /* margin: 0 auto; */
   flex-direction: row;
   flex-flow: column wrap;
+  background-color: #ffffff;
+  padding-left: ${props => props.paddingLeft};
+  padding-right: ${props => props.paddingRight};
 `
 
 const Block = styled.div`
   display: flex;
   flex-direction: row;
-  /* flex: 3; */
-  /* padding: rhythm(1); */
   align-items: center;
   justify-content: flex-start;
 `
 const BlockRight = styled.div`
   display: flex;
   flex-direction: row;
-  /* flex: 3; */
-  /* padding: rhythm(1); */
   align-items: center;
   justify-content: flex-end;
 `
 const BlockText = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 30vw;
   @media (max-width: 700px) {
     width: inherit;
     padding-left: 0;
     padding-right: 0;
   }
   > p {
-    /* text-align: right; */
-    max-width: 30vw;
+    /* max-width: 30vw; */
   }
 `
 
 const BlockTextRight = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 30vw;
+  /* max-width: 30vw; */
   align-items: flex-end;
   @media (max-width: 700px) {
     width: inherit;
@@ -78,7 +75,7 @@ const text = styled.p`
 class Features extends React.Component {
   render() {
     return (
-      <FeaturesContainer>
+      <FeaturesContainer paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
         <Block>
           <Icon src={lost} />
           <BlockTextRight>

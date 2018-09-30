@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
-import logo from '../assets/logo/Wordmark - White.png'
+import logo from '../assets/logo/Wordmark - Mirage.png'
 
 const MenuContainer = styled.div`
   position: absolute;
@@ -18,7 +18,7 @@ const Menu = styled.div`
 
 const StyledLink = styled(Link)`
   float: right;
-  color: #fff;
+  color: #161925;
   box-shadow: none;
   text-decoration: none;
   font-family: 'Nunito';
@@ -51,7 +51,7 @@ class Nav extends React.Component {
           />
           <StyledLink
             activeStyle={{
-              color: '#EC7D64',
+              color: '#FFF',
             }}
             to={'/About'}
           >
@@ -59,7 +59,7 @@ class Nav extends React.Component {
           </StyledLink>
           <StyledLink
             activeStyle={{
-              color: '#EC7D64',
+              color: '#FFF',
             }}
             to={'/FAQ'}
           >
@@ -67,7 +67,7 @@ class Nav extends React.Component {
           </StyledLink>
           <StyledLink
             activeStyle={{
-              color: '#EC7D64',
+              color: '#FFF',
             }}
             to={'/'}
           >

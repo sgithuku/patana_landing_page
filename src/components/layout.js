@@ -4,13 +4,15 @@ import '../components/splitStyles.css'
 import styled from 'styled-components'
 import { rhythm, scale } from '../utils/typography'
 
-import mockup from '../assets/mockup-1.png'
+import mockup from '../assets/demos/Pixel-group-2.png'
 import background from '../assets/bg/beach.jpg'
 import google from '../assets/google-play-badge.png'
 import Nav from './nav'
 import Features from './features'
 import Contact from './Contact'
 import Footer from './Footer'
+
+// options = ['call grandma', 'text your partner', 'message your client']
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,9 +35,11 @@ const Container = styled.div`
   min-height: 90vh;
   width: 100%;
   margin: 0 auto;
-  background-image: url(${background});
+  background-color: #ec7d64;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23161925' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23f1db84' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23c77264' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23ccc37f' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23a36764' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23a7ab7a' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%237e5b63' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23839474' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23585062' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%235d7e6e' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23284461' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23316868' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   background-size: cover;
-  background-position: bottom;
+  /* background by SVGBackgrounds.com */
   @media (max-width: 700px) {
     width: 100%;
     padding-left: 0;
@@ -63,7 +67,7 @@ const ImgContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   width: 50%;
-  height: 100%;
+  height: 90%;
   /* max-width: 30vw; */
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 700px) {
@@ -96,17 +100,20 @@ class Template extends React.Component {
               <h2
                 style={{
                   ...scale(2),
-                  color: '#fff',
+                  color: '#161925',
                   textAlign: 'left',
                   maxWidth: rhythm(16),
                 }}
               >
                 Build better relationships.
               </h2>
-              <p style={{ color: '#fff', maxWidth: rhythm(16) }}>
+              <p style={{ color: '#161925', maxWidth: rhythm(16) }}>
                 Patana can help you remember to call your granny. Text your
-                partner. Keep in touch with your friends from university. And
-                much more.
+                partner. Keep in touch with your friends. And much more.
+              </p>
+              <p style={{ color: '#161925', maxWidth: rhythm(16) }}>
+                Save notes, important dates, set reminders, and track upcoming
+                events the easy way.
               </p>
               <img
                 src={google}
@@ -142,7 +149,6 @@ class Template extends React.Component {
               flex: 1,
               paddingLeft: rhythm(3),
               paddingRight: rhythm(3),
-              paddingBottom: rhythm(3),
               // maxWidth: rhythm(24),
               justifyContent: 'center',
               // height: '90vh',
@@ -153,9 +159,8 @@ class Template extends React.Component {
               // backgroundSize: 'cover',
               // backgroundPosition: 'bottom',
             }}
-          >
-            <Features />
-          </div>
+          />
+          <Features />
           <Contact />
           <Footer />
         </div>

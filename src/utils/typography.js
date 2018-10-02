@@ -1,5 +1,5 @@
 import Typography from 'typography'
-import lincolnTheme from 'typography-theme-Lincoln'
+import lincolnTheme from 'typography-theme-lincoln'
 
 lincolnTheme.overrideThemeStyles = () => ({
   'a.gatsby-resp-image-link': {

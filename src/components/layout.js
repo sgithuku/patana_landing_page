@@ -47,6 +47,21 @@ const Container = styled.div`
   }
 `
 
+const downArrow = styled.p`
+  position: absolute;
+  bottom: 10vh;
+  font-size: 36px;
+  margin: 0 auto;
+  /* color: #fff; */
+  > i {
+    transform: rotate(45deg);
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+`
+
 const Feature = styled.div`
   display: inline-flex;
   flex-direction: column;
@@ -138,6 +153,9 @@ class Template extends React.Component {
                 }}
               />
             </ImgContainer>
+            <downArrow>
+              <i />
+            </downArrow>
           </Container>
 
           {/* Second section */}

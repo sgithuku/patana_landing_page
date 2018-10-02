@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import lost from '../assets/lost-trans.png'
-import message from '../assets/undraw_messaging_uok8.png'
-import group from '../assets/undraw_hang_out_h9ud.png'
+import highfive from '../assets/highfive.png'
+import message from '../assets/chatting.png'
+import group from '../assets/selfie.svg'
 import { rhythm, scale } from '../utils/typography'
 
 const FeaturesContainer = styled.div`
@@ -77,27 +77,30 @@ class Features extends React.Component {
     return (
       <FeaturesContainer paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
         <Block>
-          <Icon src={lost} />
+          <Icon src={message} />
           <BlockTextRight>
-            <h3>Notifications you control</h3>
-            <p>Sweet, sweet reminders to speak with your friends and family</p>
+            <h3>Never forget to call home</h3>
+            <p>
+              Sweet, sweet reminders to speak with your friends and family. You
+              are in control.
+            </p>
           </BlockTextRight>
         </Block>
         <BlockRight>
           <BlockText>
-            <h3>Events calendar</h3>
+            <h3>Save your memories</h3>
             <p>
-              Keep track of upcoming birthdays, anniversaries and anything else
-              you want to remember.
+              Keep track of upcoming birthdays, anniversaries and little things
+              you would otherwise forget.
             </p>
           </BlockText>
           <Icon src={group} />
         </BlockRight>
         <Block>
-          <Icon src={message} />
+          <Icon src={highfive} />
           <BlockTextRight>
-            <h3>Secure</h3>
-            <p>Your data is yours and is not stored on our servers.</p>
+            <h3>Stay winning</h3>
+            <p>Patana has everything you need to keep in touch.</p>
           </BlockTextRight>
         </Block>
       </FeaturesContainer>

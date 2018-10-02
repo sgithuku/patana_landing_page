@@ -14,6 +14,17 @@ const Menu = styled.div`
   display: block;
   /* max-width: rhythm(24); */
   margin: 0 auto;
+  @media (max-width: 700px) {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center;
+    > img {
+      align-self: center !important;
+      float: none !important;
+    }
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -65,14 +76,14 @@ class Nav extends React.Component {
           >
             FAQ
           </StyledLink> */}
-          <StyledLink
+          {/* <StyledLink
             activeStyle={{
               color: '#161925',
             }}
             to={'/'}
           >
             Home
-          </StyledLink>
+          </StyledLink> */}
         </Menu>
       </MenuContainer>
     )

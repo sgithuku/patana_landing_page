@@ -31,7 +31,7 @@ const Input = styled.input`
   background: #161925;
   border: none;
   border-radius: 3px 0 0 3px;
-  width: ${props => props.width};
+  max-width: ${props => props.width};
   display: inline-flex;
   @media (max-width: 700px) {
     width: inherit;
@@ -50,7 +50,7 @@ const Button = styled.button`
 
 const Header = styled.h2`
   color: #ffffff;
-  width: ${props => props.width};
+  max-width: ${props => props.width};
   text-align: center;
   /* display: block;
   flex-grow: 1; */

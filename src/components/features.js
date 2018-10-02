@@ -14,6 +14,12 @@ const FeaturesContainer = styled.div`
   flex-direction: row;
   flex-flow: column wrap;
   background-color: #ffffff;
+  @media (max-width: 700px) {
+    width: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    flex-direction: column;
+  }
   padding-left: ${props => props.paddingLeft};
   padding-right: ${props => props.paddingRight};
 `
@@ -23,23 +29,24 @@ const Block = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  @media (max-width: 700px) {
+    flex-flow: column nowrap;
+  }
 `
 const BlockRight = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  @media (max-width: 700px) {
+    flex-flow: column-reverse nowrap;
+  }
 `
 const BlockText = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 700px) {
-    width: inherit;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  > p {
-    /* max-width: 30vw; */
+    text-align: center;
   }
 `
 
@@ -48,16 +55,14 @@ const BlockTextRight = styled.div`
   flex-direction: column;
   /* max-width: 30vw; */
   align-items: flex-end;
+  text-align: right;
   @media (max-width: 700px) {
-    width: inherit;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  > p {
-    text-align: right;
-  }
-  > h3 {
-    text-align: right;
+    text-align: center;
+    align-items: center;
+
+    > h3 {
+      text-align: center !important;
+    }
   }
 `
 

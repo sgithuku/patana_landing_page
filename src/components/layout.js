@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { rhythm, scale } from '../utils/typography'
 
 import mockup from '../assets/demos/Pixel-group-2.png'
-import background from '../assets/bg/beach.jpg'
+// import background from '../assets/bg/beach.jpg'
 import google from '../assets/google-play-badge.png'
 import Nav from './nav'
 import Features from './features'
@@ -44,6 +44,10 @@ const Container = styled.div`
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    text-align: center;
+    height: inherit;
+    /* flex-direction: column; */
+    flex-flow: column-reverse nowrap;
   }
 `
 
@@ -71,7 +75,21 @@ const Feature = styled.div`
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 700px) {
     width: 100%;
-    margin-left: 0;
+    margin: 0 auto;
+    align-items: center;
+    > h2 {
+      text-align: center !important;
+      margin-top:0;
+      font-size: 3rem !important;
+      line-height: 3rem !important;
+    }
+    > p {
+      text-align: center;
+    }
+    > img {
+      margin: 0 auto 10vh auto;
+    }
+
   }
 `
 
@@ -86,7 +104,7 @@ const ImgContainer = styled.div`
   /* max-width: 30vw; */
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 700px) {
-    display: none;
+    width: 90vw;
   }
 `
 

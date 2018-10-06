@@ -1,18 +1,19 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import '../components/splitStyles.css'
 import styled from 'styled-components'
 import { rhythm, scale } from '../utils/typography'
+import Img from 'gatsby-image'
+// import mockup from '../assets/demos/Pixel-group-2.png'
+import get from 'lodash/get'
 
-import mockup from '../assets/demos/Pixel-group-2.png'
 // import background from '../assets/bg/beach.jpg'
 import google from '../assets/google-play-badge.png'
 import Nav from './nav'
 import Features from './features'
 import Contact from './Contact'
 import Footer from './Footer'
-
-// options = ['call grandma', 'text your partner', 'message your client']
+import HeaderImage from './HeaderImage'
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ const Container = styled.div`
   background-attachment: fixed;
   background-size: cover;
   /* background by SVGBackgrounds.com */
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
@@ -51,18 +52,19 @@ const Container = styled.div`
   }
 `
 
-const downArrow = styled.p`
-  position: absolute;
-  bottom: 10vh;
-  font-size: 36px;
-  margin: 0 auto;
-  /* color: #fff; */
+const DownArrow = styled.p`
+  font-size: 72px;
+  line-height: 0px;
+  text-align: center;
+  color: #fff;
   > i {
     transform: rotate(45deg);
+    margin: 0 auto;
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 6px 6px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 12px;
+    clear: left;
   }
 `
 
@@ -73,7 +75,7 @@ const Feature = styled.div`
   height: 100%;
   justify-content: center;
   /* margin-left: ${props => props.marginLeft}; */
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     width: 100%;
     margin: 0 auto;
     align-items: center;
@@ -94,6 +96,7 @@ const Feature = styled.div`
 `
 
 const ImgContainer = styled.div`
+  /* position: relative; */
   display: inline-flex;
   align-self: flex-end;
   justify-content: center;
@@ -103,7 +106,7 @@ const ImgContainer = styled.div`
   height: 90%;
   /* max-width: 30vw; */
   /* margin-left: ${props => props.marginLeft}; */
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     width: 90vw;
   }
 `
@@ -114,6 +117,9 @@ class Template extends React.Component {
   render() {
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
+    // const mockup = get(this, 'props.data.mockup.childImageSharp.fluid')
+    // console.log('blogindex', this.props, mockup)
+
     let header
 
     if (location.pathname === rootPath) {
@@ -158,23 +164,26 @@ class Template extends React.Component {
               />
             </Feature>
 
-            {/* <ImgContainer marginLeft={rhythm(3)}> */}
             <ImgContainer>
-              <img
-                src={mockup}
-                style={{
-                  // width: '100%',
-                  maxWidth: 'inherit',
-                  maxHeight: '100%',
-                  justifySelf: 'center',
-                  alignSelf: 'center',
-                }}
-              />
+              <HeaderImage />
             </ImgContainer>
-            <downArrow>
-              <i />
-            </downArrow>
           </Container>
+          {/* <div
+            style={{
+              width: 'inherit',
+              overflow: 'hidden',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              display: 'flex',
+              flex: 1,
+              position: 'absolute',
+              bottom: '10',
+            }}
+          >
+            <DownArrow>
+              <i />
+            </DownArrow>
+          </div> */}
 
           {/* Second section */}
 
@@ -227,3 +236,15 @@ class Template extends React.Component {
 }
 
 export default Template
+
+// export const pageQuery = graphql`
+//   query HeaderFragment {
+//     mockup: file(relativePath: { eq: "demos/Pixel-group-2.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1240) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `

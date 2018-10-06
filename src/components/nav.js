@@ -14,7 +14,7 @@ const Menu = styled.div`
   display: block;
   /* max-width: rhythm(24); */
   margin: 0 auto;
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     padding: 0 !important;
     display: flex;
     flex-direction: row;

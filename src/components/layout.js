@@ -14,6 +14,7 @@ import Features from './features'
 import Contact from './Contact'
 import Footer from './Footer'
 import HeaderImage from './HeaderImage'
+import Badge from './Badge'
 
 const Wrapper = styled.div`
   display: flex;
@@ -74,24 +75,26 @@ const Feature = styled.div`
   width: 50%;
   height: 100%;
   justify-content: center;
-  /* margin-left: ${props => props.marginLeft}; */
+  > h2 {
+    hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
   @media (max-width: 900px) {
     width: 100%;
     margin: 0 auto;
     align-items: center;
+    justify-content: flex-start;
     > h2 {
       text-align: center !important;
-      margin-top:0;
+      margin-top: 0;
+      padding-top: 0;
       font-size: 3rem !important;
       line-height: 3rem !important;
     }
     > p {
       text-align: center;
     }
-    > img {
-      margin: 0 auto 10vh auto;
-    }
-
   }
 `
 
@@ -154,14 +157,7 @@ class Template extends React.Component {
                 Save notes, important dates, set reminders, and track upcoming
                 events the easy way.
               </p>
-              <img
-                src={google}
-                style={{
-                  maxWidth: rhythm(6),
-                  alignSelf: 'flex-start',
-                  paddingLeft: 0,
-                }}
-              />
+              <Badge />
             </Feature>
 
             <ImgContainer>
@@ -236,15 +232,3 @@ class Template extends React.Component {
 }
 
 export default Template
-
-// export const pageQuery = graphql`
-//   query HeaderFragment {
-//     mockup: file(relativePath: { eq: "demos/Pixel-group-2.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 1240) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `

@@ -141,16 +141,16 @@ class Template extends React.Component {
                   ...scale(2),
                   color: '#161925',
                   textAlign: 'left',
-                  maxWidth: rhythm(16),
+                  maxWidth: rhythm(24),
                 }}
               >
                 Build better relationships.
               </h2>
-              <p style={{ color: '#161925', maxWidth: rhythm(16) }}>
+              <p style={{ color: '#161925', maxWidth: rhythm(24) }}>
                 Patana can help you remember to call your granny. Text your
                 partner. Keep in touch with your friends. And much more.
               </p>
-              <p style={{ color: '#161925', maxWidth: rhythm(16) }}>
+              <p style={{ color: '#161925', maxWidth: rhythm(24) }}>
                 Save notes, important dates, set reminders, and track upcoming
                 events the easy way.
               </p>

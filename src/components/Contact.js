@@ -16,6 +16,7 @@ const ContactContainer = styled.div`
   background-size: cover;
   /* background by SVGBackgrounds.com */
   align-items: center;
+  justify-content: center;
 `
 const InputContainer = styled.div`
   display: flex;

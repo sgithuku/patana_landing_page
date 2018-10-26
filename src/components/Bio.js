@@ -1,9 +1,4 @@
 import React from 'react'
-
-// Import typefaces
-// import 'typeface-montserrat'
-// import 'typeface-merriweather'
-
 import profilePic from './avatar.png'
 import { rhythm } from '../utils/typography'
 
@@ -27,10 +22,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Built by <strong>Shaun Githuku</strong>.
-          {/* <a href="https://twitter.com/shaun_g">
-            You should follow him on Twitter
-          </a> */}
+          Built by <strong>Shaun.</strong>
+          <br />
+          <a href="https://twitter.com/shaun_g">Follow me on Twitter</a>
         </p>
       </div>
     )

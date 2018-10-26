@@ -6,40 +6,55 @@ import { rhythm, scale } from '../utils/typography'
 import Logo from './Logo'
 
 const MenuContainer = styled.div`
-  position: absolute;
-  top: 0;
+  display: block;
   width: 100%;
+  background-color: #161925;
+  clear: both;
+  position: relative;
+  font-size: 13px;
+  border-bottom: 2px solid #ec7d64;
 `
 const Menu = styled.div`
-  position: relative;
-  display: block;
+  display: inline-flex;
+  /* flex-direction: row; */
+  flex-flow: row-reverse wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
   padding-left: 4.5rem;
   padding-right: 4.5rem;
-  /* max-width: rhythm(24); */
-  margin: 0 auto;
+  width: 100%;
   @media (max-width: 900px) {
-    padding: 0 !important;
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: center !important;
-    align-items: center !important;
-    > img {
-      align-self: center !important;
-      float: none !important;
-    }
+    padding: 10px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
   }
 `
 
 const StyledLink = styled(Link)`
-  float: right;
-  color: #161925;
+  color: #fff;
   box-shadow: none;
   text-decoration: none;
-  font-family: 'Nunito';
   text-shadow: none;
   background-image: none;
   padding: 10px 30px;
   /* font-size: scale(0.6); */
+`
+
+const Links = styled.div`
+  /* display: inline-flex; */
+  align-self: center;
+`
+
+const LogoHolder = styled.div`
+  flex-grow: 1;
+  align-self: flex-start;
+  height: 50px;
+  @media (max-width: 900px) {
+    align-self: center;
+  }
 `
 
 class Nav extends React.Component {
@@ -47,31 +62,43 @@ class Nav extends React.Component {
     return (
       <MenuContainer>
         <Menu>
-          <Logo />
-          {/* <StyledLink
-            activeStyle={{
-              color: '#FFF',
-            }}
-            to={'/About'}
-          >
-            About
-          </StyledLink>
-          <StyledLink
-            activeStyle={{
-              color: '#FFF',
-            }}
-            to={'/FAQ'}
-          >
-            FAQ
-          </StyledLink> */}
-          {/* <StyledLink
-            activeStyle={{
-              color: '#161925',
-            }}
-            to={'/'}
-          >
-            Home
-          </StyledLink> */}
+          <Links>
+            <StyledLink
+              activeStyle={{
+                color: '#ec7d64',
+              }}
+              to={'/'}
+            >
+              Home
+            </StyledLink>
+            <StyledLink
+              activeStyle={{
+                color: '#ec7d64',
+              }}
+              to={'/About'}
+            >
+              About
+            </StyledLink>
+            <StyledLink
+              activeStyle={{
+                color: '#ec7d64',
+              }}
+              to={'/FAQ'}
+            >
+              FAQ
+            </StyledLink>
+            <StyledLink
+              activeStyle={{
+                color: '#ec7d64',
+              }}
+              to={'/Blog'}
+            >
+              Blog
+            </StyledLink>
+          </Links>
+          <LogoHolder>
+            <Logo />
+          </LogoHolder>
         </Menu>
       </MenuContainer>
     )

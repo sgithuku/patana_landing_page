@@ -1,5 +1,9 @@
 # What needs to be done to build the Patana Landing page?
 
+# Stuff for blog posts
+
+- [comics](https://turnoff.us/geek/the-depressed-developer-42/)
+
 # Gradients
 
 ## Colourful mountains.

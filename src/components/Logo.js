@@ -1,22 +1,40 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
+
+const StyledLink = styled(Link)`
+  /* float: right; */
+  display: inline-block;
+  height: inherit;
+  max-height: 50px;
+  @media (max-width: 600px) {
+    padding: 0 !important;
+  }
+`
 
 const Logo = ({ data }) => (
-  <Img
-    fluid={data.file.childImageSharp.fluid}
-    imgStyle={{
-      height: 'auto',
-      width: 'auto',
-      maxWidth: '13.5rem',
-      paddingTop: '10px',
-      paddingLeft: '4.5rem',
-    }}
-    placeholderStyle={{
-      alignSelf: 'center',
-      justifyContent: 'center',
-    }}
-  />
+  <StyledLink to={'/'}>
+    <Img
+      fluid={data.file.childImageSharp.fluid}
+      imgStyle={{
+        width: 'auto',
+        marginTop: '10px',
+        marginRight: '30px',
+        padding: '0',
+        height: '32px',
+      }}
+      placeholderStyle={{
+        // height: 'auto',
+        // width: 'auto',
+        display: 'block',
+        position: 'relative',
+        // maxWidth: '13.5rem',
+        // justifySelf: 'flexStart',
+        padding: '0',
+      }}
+    />
+  </StyledLink>
 )
 
 export default props => (

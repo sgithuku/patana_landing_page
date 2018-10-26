@@ -17,9 +17,11 @@ const HeaderImage = ({ data }) => (
       maxWidth: '100%',
     }}
     style={{
-      position: 'relative',
       width: '100%',
+      height: 'auto',
       maxWidth: '90vw',
+      // maxHeight: '60vh',
+      // width: 'auto',
     }}
   />
 )
@@ -28,7 +30,7 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        file(relativePath: { eq: "demos/Pixel-group-4.png" }) {
+        file(relativePath: { eq: "demos/Pixel-demos-1.png" }) {
           childImageSharp {
             fluid(maxWidth: 1240) {
               ...GatsbyImageSharpFluid

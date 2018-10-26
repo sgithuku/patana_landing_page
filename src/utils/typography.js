@@ -3,12 +3,12 @@ import Typography from 'typography'
 
 const typography = new Typography({
   baseFontSize: '16px',
-  baseLineHeight: 1.5,
+  baseLineHeight: 1.6,
   scaleRatio: 2.2,
   headerFontFamily: ['Nunito', 'sans-serif'],
   bodyFontFamily: ['Nunito', 'sans-serif'],
   bodyWeight: 300,
-  blockMarginBottom: 0.5,
+  // blockMarginBottom: 0.5,
   googleFonts: [
     {
       name: 'Nunito',
@@ -16,18 +16,20 @@ const typography = new Typography({
       // subset: ['latin-ext'],
     },
   ],
-  overrideStyles: () => ({
+  overrideStyles: ({ scale }) => ({
     'a.gatsby-resp-image-link': {
       boxShadow: 'none',
     },
-    // 'h1,h2,h3,input,button': {
-    //   fontFamily: 'Nunito,sans-serif',
-    //   fontWeight: '700',
-    // },
-    // p: {
-    //   fontFamily: 'Nunito,sans-serif',
-    //   fontWeight: '200',
-    // },
+    h2: {
+      ...scale(2),
+    },
+    a: {
+      textDecoration: 'none',
+      color: '#ec7d64',
+    },
+    'a:hover': {
+      textDecoration: 'underline',
+    },
   }),
 })
 

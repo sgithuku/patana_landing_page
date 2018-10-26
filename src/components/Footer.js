@@ -14,7 +14,6 @@ const FooterContainer = styled.div`
   background-color: #161925;
   color: grey;
   align-items: center;
-  font-family: 'Nunito';
   font-size: 12px;
 `
 

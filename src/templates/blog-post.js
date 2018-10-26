@@ -6,6 +6,16 @@ import get from 'lodash/get'
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
+import styled from 'styled-components'
+
+const Header = styled.h2`
+  background-color: #161925;
+  color: #fff;
+  padding: 10px 10px;
+  text-align: center;
+  /* text-decoration: underline;
+  text-decoration-color: #ec7d64; */
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -21,21 +31,11 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <Header>{post.frontmatter.title}</Header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
+        <br
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(3),
           }}
         />
         <Bio />

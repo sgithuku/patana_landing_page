@@ -1,28 +1,21 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import '../components/splitStyles.css'
+// import '../components/splitStyles.css'
 import styled from 'styled-components'
 import { rhythm, scale } from '../utils/typography'
-import Img from 'gatsby-image'
-// import mockup from '../assets/demos/Pixel-group-2.png'
 import get from 'lodash/get'
-
-// import background from '../assets/bg/beach.jpg'
-import google from '../assets/google-play-badge.png'
 import Nav from './nav'
 import Features from './features'
 import Contact from './Contact'
 import Footer from './Footer'
 import HeaderImage from './HeaderImage'
 import Badge from './Badge'
+import FeaturedText from './FeaturedText'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* @media (max-width: 700px) {
-    background-image: url(${background});
-    background-color: transparent;
-  } */
+  background-color: #fff;
 `
 
 const Container = styled.div`
@@ -31,7 +24,7 @@ const Container = styled.div`
   padding-right: ${props => props.paddingRight};
   flex-direction: row;
   flex-flow: column wrap;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   justify-content: center;
   height: 90vh;
   min-height: 90vh;
@@ -44,28 +37,14 @@ const Container = styled.div`
   /* background by SVGBackgrounds.com */
   @media (max-width: 900px) {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
     height: inherit;
+    min-height: 0;
+    justify-content: flex-start;
     /* flex-direction: column; */
     flex-flow: column-reverse nowrap;
-  }
-`
-
-const DownArrow = styled.p`
-  font-size: 72px;
-  line-height: 0px;
-  text-align: center;
-  color: #fff;
-  > i {
-    transform: rotate(45deg);
-    margin: 0 auto;
-    border: solid white;
-    border-width: 0 6px 6px 0;
-    display: inline-block;
-    padding: 12px;
-    clear: left;
   }
 `
 
@@ -76,15 +55,19 @@ const Feature = styled.div`
   height: 100%;
   justify-content: center;
   > h2 {
-    hyphens: auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    /* hyphens: auto; */
+    /* word-wrap: break-word; */
+    /* overflow-wrap: break-word; */
   }
   @media (max-width: 900px) {
+    display: inline-flex;
+    flex-flow: column nowrap;
     width: 100%;
     margin: 0 auto;
     align-items: center;
     justify-content: flex-start;
+    order: 1;
+    padding-top: 30px;
     > h2 {
       text-align: center !important;
       margin-top: 0;
@@ -110,8 +93,24 @@ const ImgContainer = styled.div`
   /* max-width: 30vw; */
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 900px) {
-    width: 90vw;
+    maxHeight: 60vh;
   }
+`
+
+const Post = styled.div`
+  display: flex;
+  padding-left: ${props => props.paddingLeft};
+  padding-right: ${props => props.paddingRight};
+  max-width: ${props => props.maxWidth};
+  min-height: 90vh;
+  flex-direction: row;
+  flex-flow: column wrap;
+  padding-top: 50px;
+  justify-content: center;
+  /* width: 100%; */
+  margin: 0 auto;
+  color: #161925;
+  /* background-color: #fff; */
 `
 
 // https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles#39196525
@@ -122,6 +121,8 @@ class Template extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     // const mockup = get(this, 'props.data.mockup.childImageSharp.fluid')
     // console.log('blogindex', this.props, mockup)
+    // console.log('this.state', this.state)
+    // const timer = (this.setState, 3000, { phrase: phrase + 1 })
 
     let header
 
@@ -137,94 +138,47 @@ class Template extends React.Component {
         >
           <Nav />
           <Container paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
-            {/* <Feature marginLeft={rhythm(3)}> */}
             <Feature>
-              <h2
-                style={{
-                  ...scale(2),
-                  color: '#161925',
-                  textAlign: 'left',
-                  maxWidth: rhythm(24),
-                }}
-              >
-                Build better relationships.
-              </h2>
-              <p style={{ color: '#161925', maxWidth: rhythm(24) }}>
-                Patana can help you remember to call your granny. Text your
-                partner. Keep in touch with your friends. And much more.
-              </p>
-              <p style={{ color: '#161925', maxWidth: rhythm(24) }}>
-                Save notes, important dates, set reminders, and track upcoming
-                events the easy way.
-              </p>
-              <Badge />
+              <FeaturedText />
             </Feature>
 
             <ImgContainer>
               <HeaderImage />
             </ImgContainer>
           </Container>
-          {/* <div
-            style={{
-              width: 'inherit',
-              overflow: 'hidden',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              display: 'flex',
-              flex: 1,
-              position: 'absolute',
-              bottom: '10',
-            }}
-          >
-            <DownArrow>
-              <i />
-            </DownArrow>
-          </div> */}
-
-          {/* Second section */}
 
           <div
             style={{
-              // maxWidth: rhythm(48),
               margin: '0 auto',
               flex: 1,
               paddingLeft: rhythm(3),
               paddingRight: rhythm(3),
-              // maxWidth: rhythm(24),
               justifyContent: 'center',
-              // height: '90vh',
-              // minHeight: '90vh',
               width: '100%',
               backgroundColor: '#fff',
-              // backgroundImage: 'url(' + background + ')',
-              // backgroundSize: 'cover',
-              // backgroundPosition: 'bottom',
             }}
           />
           <Features />
-          <Contact />
+          <Contact>{children}</Contact>
+
           <Footer />
         </div>
       )
     } else {
       header = (
-        <h3
+        <div
           style={{
-            marginTop: 0,
-            marginBottom: rhythm(-1),
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            backgroundColor: '#fff',
           }}
         >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Patana
-          </Link>
-        </h3>
+          <Nav />
+          <Post maxWidth={rhythm(24)}>{children}</Post>
+          <Contact />
+          <Footer />
+        </div>
       )
     }
     return <Wrapper>{header}</Wrapper>

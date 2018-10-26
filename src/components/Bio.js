@@ -24,7 +24,7 @@ class Bio extends React.Component {
         <p>
           Built by <strong>Shaun.</strong>
           <br />
-          <a href="https://twitter.com/shaun_g">Follow me on Twitter</a>
+          <a href="https://twitter.com/shaun_g">Find me on Twitter</a>
         </p>
       </div>
     )

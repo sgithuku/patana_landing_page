@@ -9,8 +9,8 @@ import { rhythm, scale } from '../utils/typography'
 import styled from 'styled-components'
 
 const Header = styled.h2`
-  background-color: #161925;
-  color: #fff;
+  /* background-color: #161925; */
+  /* color: #fff; */
   padding: 10px 10px;
   text-align: center;
   /* text-decoration: underline;

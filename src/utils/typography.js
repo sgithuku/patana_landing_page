@@ -6,8 +6,8 @@ const typography = new Typography({
   baseLineHeight: 1.6,
   scaleRatio: 2.2,
   headerFontFamily: ['Nunito', 'sans-serif'],
-  bodyFontFamily: ['Nunito', 'sans-serif'],
-  bodyWeight: 300,
+  bodyFontFamily: ['Courier New', 'Courier', 'sans-serif'],
+  bodyWeight: 400,
   // blockMarginBottom: 0.5,
   googleFonts: [
     {
@@ -28,7 +28,8 @@ const typography = new Typography({
       color: '#ec7d64',
     },
     'a:hover': {
-      textDecoration: 'underline',
+      // textDecoration: 'underline',
+      fontWeight: '700',
     },
   }),
 })

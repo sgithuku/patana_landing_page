@@ -17,10 +17,10 @@ const HeaderImage = ({ data }) => (
       maxWidth: '100%',
     }}
     style={{
-      width: '100%',
+      width: '80%',
       height: 'auto',
       maxWidth: '90vw',
-      // maxHeight: '60vh',
+      // maxHeight: '80vh',
       // width: 'auto',
     }}
   />

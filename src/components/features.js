@@ -59,7 +59,7 @@ const BlockText = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  text-align: right;
+  text-align: left;
   max-width: ${props => props.maxWidth};
   @media (max-width: 700px) {
     text-align: center;
@@ -88,11 +88,11 @@ const Icon = styled.img`
   max-width: 40vw;
 `
 
-const text = styled.p`
-  text-align: center;
-  display: block;
-  clear: both;
-`
+// const text = styled.p`
+//   text-align: center;
+//   display: block;
+//   clear: both;
+// `
 
 class Features extends React.Component {
   render() {
@@ -101,20 +101,31 @@ class Features extends React.Component {
         <Block paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
           <Icon src={message} />
           <BlockTextRight maxWidth={rhythm(16)}>
-            <h3>Never forget to call home</h3>
-            <p>
-              Sweet, sweet reminders to speak with your friends and family. You
-              are in control.
-            </p>
+            <h3>Never forget to call your friends and family</h3>
+            <ul>
+              <li>Automatically set up reminders for contacts you choose</li>
+              <li>Adjust how frequently you want to speak to them</li>
+              <li>Set important dates and receive notifications on the day</li>
+              <li>Categories to keep you even more organised</li>
+              <li>
+                Calendar view gives you a global view of all your upcoming
+                events
+              </li>
+            </ul>
           </BlockTextRight>
         </Block>
         <BlockRight paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
           <BlockText maxWidth={rhythm(16)}>
-            <h3>Save your memories</h3>
-            <p>
-              Keep track of upcoming birthdays, anniversaries and little things
-              you would otherwise forget.
-            </p>
+            <h3>Store your notes, memories, and ideas. Privately.</h3>
+            <ul>
+              <li>
+                Keep track of upcoming birthdays, anniversaries and other
+                important dates
+              </li>
+              <li>Keep quick notes about people you meet</li>
+              <li>Your data is kept securely in the app</li>
+            </ul>
+            <p />
           </BlockText>
           <Icon src={group} />
         </BlockRight>

@@ -72,8 +72,7 @@ const Feature = styled.div`
       text-align: center !important;
       margin-top: 0;
       padding-top: 0;
-      font-size: 3rem !important;
-      line-height: 3rem !important;
+      justify-content: center;
     }
     > p {
       text-align: center;

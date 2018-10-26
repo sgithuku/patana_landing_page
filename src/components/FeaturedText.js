@@ -7,21 +7,20 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-`
-const Container = styled.div`
-  padding-left: ${props => props.paddingLeft};
-  padding-right: ${props => props.paddingRight};
-  flex-direction: row;
-  flex-flow: column wrap;
-  /* padding-top: 50px; */
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-height: 90vh;
-  width: ${props => props.width};
   @media (max-width: 900px) {
-    min-height: inherit;
+    > h2 {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+    > h3 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+    align-items: center;
+    justify-content: center;
   }
 `
+
 const phrases = [
   'call your granny.',
   'check in with your friend abroad.',

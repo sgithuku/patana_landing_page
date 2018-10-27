@@ -22,6 +22,7 @@ const typography = new Typography({
     },
     h2: {
       ...scale(2),
+      color: '#161925',
     },
     a: {
       textDecoration: 'none',

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
   /* float: right; */
-  display: inline-block;
+  display: inline-flex;
   height: inherit;
   max-height: 50px;
   @media (max-width: 600px) {

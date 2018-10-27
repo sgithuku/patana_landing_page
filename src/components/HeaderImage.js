@@ -12,16 +12,14 @@ const HeaderImage = ({ data }) => (
       marginBottom: '0',
       marginLeft: 'auto',
       marginRight: 'auto',
-      justifySelf: 'center',
       alignSelf: 'center',
       maxWidth: '100%',
     }}
     style={{
-      width: '80%',
       height: 'auto',
-      maxWidth: '90vw',
-      // maxHeight: '80vh',
-      // width: 'auto',
+      width: '30vw',
+      margin: '0 auto',
+      // maxWidth: '90vw',
     }}
   />
 )

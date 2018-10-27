@@ -23,9 +23,10 @@ const Container = styled.div`
   padding-left: ${props => props.paddingLeft};
   padding-right: ${props => props.paddingRight};
   flex-direction: row;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   /* padding-top: 50px; */
   justify-content: center;
+  align-items: center;
   height: 90vh;
   min-height: 90vh;
   width: 100%;
@@ -49,11 +50,10 @@ const Container = styled.div`
 `
 
 const Feature = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  width: 50%;
-  height: 100%;
+  /* width: 50%; */
+  /* height: 100%; */
   justify-content: center;
+  align-items: flex-start;
   > h2 {
     /* hyphens: auto; */
     /* word-wrap: break-word; */
@@ -81,15 +81,8 @@ const Feature = styled.div`
 `
 
 const ImgContainer = styled.div`
-  /* position: relative; */
-  display: inline-flex;
-  align-self: flex-end;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 1;
   margin: 0 auto;
-  width: 50%;
-  height: 90%;
-  /* max-width: 30vw; */
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 900px) {
     maxHeight: 60vh;
@@ -149,7 +142,6 @@ class Template extends React.Component {
           <div
             style={{
               margin: '0 auto',
-              flex: 1,
               paddingLeft: rhythm(3),
               paddingRight: rhythm(3),
               justifyContent: 'center',

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { scale, rhythm } from '../utils/typography'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Badge from './Badge'
+import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,56 +22,88 @@ const Wrapper = styled.div`
   }
 `
 
-const phrases = [
-  'call your granny.',
-  'check in with your friend abroad.',
-  'text your partner.',
-  'call a customer.',
-  'message that barista you met at the coffee shop that one time.',
-]
+const Header = styled.h2`
+  color: #161925;
+  text-align: left;
+  max-width: ${props => props.maxWidth};
+  min-width: 500px;
+  @media (max-width: 900px) {
+    min-width: 0;
+    font-size: 1.5rem;
+  }
+`
+
+const show = keyframes`
+  0%{
+    opacity:0;
+    display: none;
+    margin-top: -20px;
+  }
+
+  7% {
+    opacity: 1;
+    display:inline;
+    margin-top: 0px;
+  }
+
+  20% {
+    opacity:0;
+    display: none;
+    margin-top: 0px;
+    
+  }
+
+  50% {
+    opacity: 0;
+    display: none;
+    
+  }
+`
+
+const FrameHolder = styled.span`
+  text-indent: 5px;
+  & span:nth-child(1) {
+    animation: 15s ${show} linear infinite;
+    animation-delay: 0s;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  & span:nth-child(2) {
+    animation: 15s ${show} linear infinite;
+    animation-delay: 3s;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  & span:nth-child(3) {
+    animation: 15s ${show} linear infinite;
+    animation-delay: 6s;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  & span:nth-child(4) {
+    animation: 15s ${show} linear infinite;
+    animation-delay: 9s;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  & span:nth-child(5) {
+    animation: 15s ${show} linear infinite;
+    animation-delay: 12s;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+`
 
 export default class FeaturedText extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      phrase: 'call your granny',
-      currentPhrase: 0,
-    }
-  }
-
-  componentDidMount() {
-    // console.log(phrases.length)
-    setInterval(i => {
-      const l = phrases.length
-      if (this.state.currentPhrase === l - 1) {
-        this.setState({ phrase: phrases[l - 1] })
-        this.setState({ currentPhrase: 0 })
-      } else {
-        this.setState({ currentPhrase: this.state.currentPhrase + 1 })
-        this.setState({ phrase: phrases[this.state.currentPhrase] })
-      }
-    }, 3000)
-  }
-
-  // TODO: Figure out how to unmount a setInterval timer
-  //   componentWillUnmount() {
-  //     setTimeout(){
-  //         return
-  //     },0)
-  //   }
-
   render() {
     return (
       <Wrapper>
-        <h2
-          style={{
-            color: '#161925',
-            textAlign: 'left',
-            maxWidth: rhythm(24),
-          }}
-        >
-          Build better relationships.
-        </h2>
+        <Header maxWidth={rhythm(24)}>Build better relationships.</Header>
         <h3
           style={{
             color: '#161925',
@@ -80,11 +113,42 @@ export default class FeaturedText extends React.Component {
           }}
         >
           Patana is an android app that helps you remember to{' '}
-          <b>{this.state.phrase}</b>
+          <FrameHolder>
+            <span>
+              <b>call your granny.</b>
+            </span>
+            <span>
+              {' '}
+              <b>check in with your friend abroad.</b>
+            </span>
+            <span>
+              {' '}
+              <b>text your partner.</b>
+            </span>
+            <span>
+              {' '}
+              <b>call your key customer.</b>
+            </span>
+            <span>
+              {' '}
+              <b>
+                message that barista you met at the coffee shop that one time.
+              </b>
+            </span>
+          </FrameHolder>
         </h3>
-        {/* <p>{this.state.phrase}</p> */}
 
         <Badge />
+        <Link
+          to={'/'}
+          style={{
+            color: '#fff',
+            textDecoration: 'underline',
+          }}
+          activeStyle={{ color: '#161925' }}
+        >
+          or sign up to the newsletter to know when the iOS version will launch
+        </Link>
       </Wrapper>
     )
   }

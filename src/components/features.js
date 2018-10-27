@@ -8,12 +8,14 @@ import { rhythm, scale } from '../utils/typography'
 
 const FeaturesContainer = styled.div`
   display: flex;
-  width: 100%;
+  flex-grow: 1;
   overflow: none;
   /* margin: 0 auto; */
   flex-direction: row;
   flex-flow: column wrap;
   background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
   @media (max-width: 700px) {
     width: inherit;
     padding-left: 0;
@@ -50,7 +52,7 @@ const BlockRight = styled.div`
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23a72fbd'/%3E%3Cstop offset='1' stop-color='%23a72fbd' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23953096'/%3E%3Cstop offset='1' stop-color='%23953096' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23212c41'/%3E%3Cstop offset='1' stop-color='%23212c41' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ec7d64'/%3E%3Cstop offset='1' stop-color='%23ec7d64' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23284461'/%3E%3Cstop offset='1' stop-color='%23284461' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23161925'/%3E%3Cstop offset='1' stop-color='%23161925' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
-  max-width: 100%;
+  width: 100%;
   @media (max-width: 700px) {
     flex-flow: column-reverse nowrap;
   }

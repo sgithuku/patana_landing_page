@@ -44,7 +44,7 @@ export default props => (
         file(relativePath: { eq: "logo/Wordmark - White.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }

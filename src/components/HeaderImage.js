@@ -31,7 +31,7 @@ export default props => (
         file(relativePath: { eq: "demos/Pixel-demos-1.png" }) {
           childImageSharp {
             fluid(maxWidth: 1240) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }

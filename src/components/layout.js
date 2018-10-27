@@ -50,10 +50,7 @@ const Container = styled.div`
 `
 
 const Feature = styled.div`
-  /* width: 50%; */
-  /* height: 100%; */
-  justify-content: center;
-  align-items: flex-start;
+  height: 100%;
   > h2 {
     /* hyphens: auto; */
     /* word-wrap: break-word; */

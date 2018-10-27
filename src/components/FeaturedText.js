@@ -6,8 +6,9 @@ import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 100%;
   @media (max-width: 900px) {
     > h2 {
       font-size: 2.5rem;
@@ -17,8 +18,7 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
       line-height: 1.5rem;
     }
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 `
 
@@ -61,7 +61,8 @@ const show = keyframes`
 `
 
 const FrameHolder = styled.span`
-  text-indent: 5px;
+  /* text-indent: 5px; */
+  display: block;
   & span:nth-child(1) {
     animation: 15s ${show} linear infinite;
     animation-delay: 0s;
@@ -110,29 +111,31 @@ export default class FeaturedText extends React.Component {
             maxWidth: rhythm(24),
             textAlign: 'left',
             fontWeight: '300',
+            paddingBottom: rhythm(1),
           }}
         >
-          Patana is an android app that helps you remember to{' '}
+          Patana is an android app that helps you remember{' '}
           <FrameHolder>
             <span>
-              <b>call your granny.</b>
+              <b>to call your granny.</b>
             </span>
             <span>
               {' '}
-              <b>check in with your friend abroad.</b>
+              <b>to check in with your friend abroad.</b>
             </span>
             <span>
               {' '}
-              <b>text your partner.</b>
+              <b>to text your partner.</b>
             </span>
             <span>
               {' '}
-              <b>call your key customer.</b>
+              <b>to call your key customer.</b>
             </span>
             <span>
               {' '}
               <b>
-                message that barista you met at the coffee shop that one time.
+                to message that barista you met at the coffee shop that one
+                time.
               </b>
             </span>
           </FrameHolder>
@@ -144,6 +147,7 @@ export default class FeaturedText extends React.Component {
           style={{
             color: '#fff',
             textDecoration: 'underline',
+            paddingTop: rhythm(1),
           }}
           activeStyle={{ color: '#161925' }}
         >

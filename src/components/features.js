@@ -4,7 +4,12 @@ import { Link } from 'gatsby'
 import highfive from '../assets/highfive.png'
 import message from '../assets/chatting.png'
 import group from '../assets/selfie.svg'
+import bullet from '../assets/logo/Logo.png'
 import { rhythm, scale } from '../utils/typography'
+import Brain from '../assets/icons/brain.svg'
+import Bell from '../assets/icons/bell.svg'
+// import Calendar from '../assets/icons/calendar.svg'
+import Heart from '../assets/icons/heart.svg'
 
 const FeaturesContainer = styled.div`
   display: flex;
@@ -34,6 +39,9 @@ const Block = styled.div`
   align-items: center;
   justify-content: flex-start;
   max-width: 100%;
+  & li {
+    padding-left: 10px;
+  }
   @media (max-width: 700px) {
     flex-flow: column nowrap;
   }
@@ -72,9 +80,12 @@ const BlockTextRight = styled.div`
   display: flex;
   flex-direction: column;
   /* max-width: 30vw; */
-  align-items: flex-end;
+  align-items: flex-start;
   text-align: left;
   max-width: ${props => props.maxWidth};
+  > h3 {
+    display: flex;
+  }
   @media (max-width: 700px) {
     text-align: center;
     align-items: center;
@@ -90,6 +101,12 @@ const Icon = styled.img`
   max-width: 40vw;
 `
 
+const SVG = styled.img`
+  height: auto;
+  min-width: 40px;
+  margin: 0 10px;
+`
+
 // const text = styled.p`
 //   text-align: center;
 //   display: block;
@@ -103,30 +120,57 @@ class Features extends React.Component {
         <Block paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
           <Icon src={message} />
           <BlockTextRight maxWidth={rhythm(16)}>
-            <h3>Never forget to call your friends and family</h3>
-            <ul>
+            <h3>
+              <SVG src={Bell} />
+              Never forget to call or message your friends and family
+            </h3>
+            <p>
+              With Patana, you can easily set up regular reminders to get in
+              touch with friends and family.
+            </p>
+            <p>
+              Notifications are easy to set up so that you don't miss another
+              birthday, anniversary, or important event.
+            </p>
+            {/* <ul>
               <li>Automatically set up reminders for contacts you choose</li>
               <li>Adjust how frequently you want to speak to them</li>
               <li>Set important dates and receive notifications on the day</li>
               <li>Categories to keep you even more organised</li>
               <li>
                 Calendar view gives you a global view of all your upcoming
-                events
+                notifications
               </li>
-            </ul>
+            </ul> */}
           </BlockTextRight>
         </Block>
         <BlockRight paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
           <BlockText maxWidth={rhythm(16)}>
-            <h3>Store your notes, memories, and ideas. Privately.</h3>
-            <ul>
+            <h3>
+              <SVG src={Brain} />
+              Store your notes, memories, and ideas. Privately.
+            </h3>
+            <p>
+              More than just keeping up with your friends,{' '}
+              <b>Patana helps you remember important things</b> - whether it was
+              that funny photo, a great gift idea you don't want to forget, or
+              even a little reminder that your boss is a big football fan.
+            </p>
+            <p>
+              Keep all your contacts
+              <b>easily organised and update contacts within the app.</b>
+            </p>
+            <p>
+              This information is all stored <b>securely</b> for you only.{' '}
+            </p>
+            {/* <ul>
               <li>
                 Keep track of upcoming birthdays, anniversaries and other
                 important dates
               </li>
-              <li>Keep quick notes about people you meet</li>
+              <li>Keep quick notes about your friends</li>
               <li>Your data is kept securely in the app</li>
-            </ul>
+            </ul> */}
             <p />
           </BlockText>
           <Icon src={group} />
@@ -134,8 +178,14 @@ class Features extends React.Component {
         <Block paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
           <Icon src={highfive} />
           <BlockTextRight maxWidth={rhythm(16)}>
-            <h3>Stay winning</h3>
-            <p>Patana has everything you need to keep in touch.</p>
+            <h3>
+              <SVG src={Heart} />
+              Made with love
+            </h3>
+            <p>
+              Patana is designed, developed, and maintained to (hopefully) help
+              you build better relationships with the people that matter most.
+            </p>
           </BlockTextRight>
         </Block>
       </FeaturesContainer>

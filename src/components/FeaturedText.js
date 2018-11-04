@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   justify-content: center;
   height: 100%;
   @media (max-width: 900px) {
+    height: 50%;
     > h2 {
       font-size: 2.5rem;
       line-height: 2.5rem;
@@ -148,6 +149,8 @@ export default class FeaturedText extends React.Component {
             color: '#fff',
             textDecoration: 'underline',
             paddingTop: rhythm(1),
+            maxWidth: rhythm(24),
+            textAlign: 'left',
           }}
           activeStyle={{ color: '#161925' }}
         >

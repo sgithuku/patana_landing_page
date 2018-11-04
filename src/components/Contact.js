@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const ContactContainer = styled.div`
   color: #fff;
@@ -50,10 +51,9 @@ const Input = styled.input`
   flex-grow: 3;
 `
 
-const Button = styled.button`
+const Button = styled.a`
   display: inline-flex;
-  color: #104f55;
-  /* background-color: #9ec5ab; */
+  color: #161925;
   background-color: #fff;
   width: 60px;
   border: none;
@@ -79,8 +79,45 @@ const PostList = styled.div`
 `
 
 class Contact extends React.Component {
+  constructor(props) {
+    super(props)
+    // this.email = React.createRef()
+  }
+
+  // Since `addToMailchimp` returns a promise, you
+  // can handle the response in two different ways:
+
+  // Note that you need to send an email & optionally, listFields
+  // these values can be pulled from React state, form fields,
+  // or wherever.  (Personally, I recommend storing in state).
+
+  // 1. via `.then`
+  // _handleSubmit = e => {
+  //   e.preventDefault
+  //   addToMailchimp(email, listFields) // listFields are optional if you are only capturing the email address.
+  //     .then(data => {
+  //       // I recommend setting data to React state
+  //       // but you can do whatever you want (including ignoring this `then()` altogether)
+  //       console.log(data)
+  //     })
+  //     .catch(() => {
+  //       // unnecessary because Mailchimp only ever
+  //       // returns a 200 status code
+  //       // see below for how to handle errors
+  //     })
+  // }
+
+  // 2. via `async/await`
+  // _handleSubmit = async e => {
+  //   e.preventDefault
+  //   const result = await addToMailchimp(email, listFields)
+  //   // I recommend setting `result` to React state
+  //   // but you can do whatever you want
+  // }
+
   render() {
     const { location, children } = this.props
+    // const { email, listFields } = this.state
 
     return (
       <ContactContainer>
@@ -95,7 +132,7 @@ class Contact extends React.Component {
             }}
             onMouseEnter={() => this.input.focus()}
           />
-          <Button>Sign up</Button>
+          <Button href="http://eepurl.com/dMse0k">Sign up</Button>
         </InputContainer>
         <PostList maxWidth={rhythm(24)}>{children}</PostList>
       </ContactContainer>

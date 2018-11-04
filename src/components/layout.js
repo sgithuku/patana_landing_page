@@ -50,7 +50,6 @@ const Container = styled.div`
 `
 
 const Feature = styled.div`
-  height: 100%;
   > h2 {
     /* hyphens: auto; */
     /* word-wrap: break-word; */
@@ -135,17 +134,6 @@ class Template extends React.Component {
               <HeaderImage />
             </ImgContainer>
           </Container>
-
-          <div
-            style={{
-              margin: '0 auto',
-              paddingLeft: rhythm(3),
-              paddingRight: rhythm(3),
-              justifyContent: 'center',
-              width: '100%',
-              backgroundColor: '#fff',
-            }}
-          />
           <Features />
           <Contact>{children}</Contact>
 

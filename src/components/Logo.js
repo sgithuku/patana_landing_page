@@ -25,6 +25,7 @@ const Logo = ({ data }) => (
         height: '32px',
       }}
       placeholderStyle={{
+        maxWidth: '100%',
         // height: 'auto',
         // width: 'auto',
         display: 'block',
@@ -41,7 +42,7 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        file(relativePath: { eq: "logo/Wordmark - White.png" }) {
+        file(relativePath: { eq: "logo/Logo - Alternate Layout - White.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid_tracedSVG

@@ -41,6 +41,9 @@ const StyledLink = styled(Link)`
   background-image: none;
   padding: 10px 30px;
   /* font-size: scale(0.6); */
+  @media (max-width: 600px) {
+    padding: 10px 10px;
+  }
 `
 
 const Links = styled.div`
@@ -87,14 +90,14 @@ class Nav extends React.Component {
             >
               FAQ
             </StyledLink>
-            <StyledLink
+            {/* <StyledLink
               activeStyle={{
                 color: '#ec7d64',
               }}
               to={'/Blog'}
             >
               Blog
-            </StyledLink>
+            </StyledLink> */}
           </Links>
           <LogoHolder>
             <Logo />

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+// import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const ContactContainer = styled.div`
   color: #fff;

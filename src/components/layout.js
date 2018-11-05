@@ -40,7 +40,7 @@ const Container = styled.div`
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
-    text-align: center;
+    /* text-align: center; */
     height: inherit;
     min-height: 0;
     justify-content: flex-start;
@@ -68,10 +68,10 @@ const Feature = styled.div`
       text-align: center !important;
       margin-top: 0;
       padding-top: 0;
-      justify-content: center;
+      /* justify-content: center; */
     }
     > p {
-      text-align: center;
+      /* text-align: center; */
     }
   }
 `

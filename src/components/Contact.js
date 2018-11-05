@@ -55,7 +55,7 @@ const Button = styled.a`
   display: inline-flex;
   color: #161925;
   background-color: #fff;
-  width: 60px;
+  min-width: 60px;
   border: none;
   padding: 0.5em;
   flex-grow: 1;

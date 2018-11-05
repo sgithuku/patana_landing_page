@@ -72,7 +72,7 @@ const BlockText = styled.div`
   text-align: left;
   max-width: ${props => props.maxWidth};
   @media (max-width: 700px) {
-    text-align: center;
+    /* text-align: center; */
   }
 `
 
@@ -87,11 +87,11 @@ const BlockTextRight = styled.div`
     display: flex;
   }
   @media (max-width: 700px) {
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
 
     > h3 {
-      text-align: center !important;
+      /* text-align: center !important; */
     }
   }
 `

@@ -6,7 +6,13 @@ const typography = new Typography({
   baseLineHeight: 1.6,
   scaleRatio: 2.2,
   headerFontFamily: ['Nunito', 'sans-serif'],
-  bodyFontFamily: ['Courier New', 'Courier', 'sans-serif'],
+  bodyFontFamily: [
+    'Courier New',
+    'Courier',
+    'Lucida Sans Typewriter',
+    'Lucida Typewriter',
+    'monospace',
+  ],
   bodyWeight: 400,
   // blockMarginBottom: 0.5,
   googleFonts: [

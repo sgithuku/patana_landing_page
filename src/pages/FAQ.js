@@ -26,6 +26,7 @@ const Container = styled.div`
   padding-top: 50px;
   min-height: 90vh;
   width: ${props => props.width};
+  max-width: 100%;
 `
 
 class FAQ extends React.Component {
@@ -44,7 +45,11 @@ class FAQ extends React.Component {
           title={siteTitle}
         />
         <Nav />
-        <Container width={rhythm(24)}>
+        <Container
+          width={rhythm(24)}
+          paddingLeft={rhythm(3)}
+          paddingRight={rhythm(3)}
+        >
           <h1>FAQ</h1>
           <h3>What is Patana</h3>
           <p>

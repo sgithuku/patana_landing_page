@@ -1,5 +1,5 @@
 ---
-title: The Manifesto
+title: A little introduction to Patana
 date: '2018-10-23T23:46:37.121Z'
 ---
 

@@ -9,12 +9,10 @@ import { rhythm, scale } from '../utils/typography'
 import styled from 'styled-components'
 
 const Header = styled.h2`
-  /* background-color: #161925; */
-  /* color: #fff; */
   padding: 10px 10px;
   text-align: center;
-  /* text-decoration: underline;
-  text-decoration-color: #ec7d64; */
+  font-size: 50px;
+  line-height: 55px;
 `
 
 class BlogPostTemplate extends React.Component {

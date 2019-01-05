@@ -15,7 +15,6 @@ const Container = styled.div`
   padding-right: ${props => props.paddingRight};
   flex-direction: row;
   flex-flow: column wrap;
-  /* padding-top: 50px; */
   justify-content: center;
   min-height: 90vh;
   width: ${props => props.width};

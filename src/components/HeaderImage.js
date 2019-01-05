@@ -30,7 +30,14 @@ export default props => (
       query {
         file(relativePath: { eq: "demos/Pixel-demos-1.png" }) {
           childImageSharp {
-            fluid(maxWidth: 1240) {
+            fluid(
+              maxWidth: 1240
+              traceSVG: {
+                color: "#ec7d64"
+                turnPolicy: TURNPOLICY_MINORITY
+                blackOnWhite: true
+              }
+            ) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }

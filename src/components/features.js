@@ -12,6 +12,7 @@ import Bell from '../assets/icons/bell.svg'
 import Heart from '../assets/icons/heart.svg'
 
 const FeaturesContainer = styled.div`
+  border-top: 2px solid #161925;
   display: flex;
   flex-grow: 1;
   overflow: none;
@@ -105,6 +106,9 @@ const SVG = styled.img`
   height: auto;
   min-width: 40px;
   margin: 0 10px;
+  @media (max-width: 400px) {
+    display: none;
+  }
 `
 
 // const text = styled.p`
@@ -158,7 +162,7 @@ class Features extends React.Component {
             </p>
             <p>
               Keep all your contacts
-              <b>easily organised and update contacts within the app.</b>
+              <b> easily organised and update contacts within the app.</b>
             </p>
             <p>
               This information is all stored <b>securely</b> for you only.{' '}

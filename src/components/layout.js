@@ -20,8 +20,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
-  padding-left: ${props => props.paddingLeft};
-  padding-right: ${props => props.paddingRight};
+  padding-left: 30px;
+  padding-right: 30px;
   flex-direction: row;
   flex-flow: row wrap;
   /* padding-top: 50px; */
@@ -31,11 +31,10 @@ const Container = styled.div`
   min-height: 90vh;
   width: 100%;
   margin: 0 auto;
-  background-color: #ec7d64;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23161925' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23f1db84' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23c77264' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23ccc37f' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23a36764' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23a7ab7a' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%237e5b63' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23839474' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23585062' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%235d7e6e' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23284461' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23316868' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dddfe7'/%3E%3Cstop offset='1' stop-color='%23dddfe7' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23d1d5e7'/%3E%3Cstop offset='1' stop-color='%23d1d5e7' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23afb4ce'/%3E%3Cstop offset='1' stop-color='%23afb4ce' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23bbbecf'/%3E%3Cstop offset='1' stop-color='%23bbbecf' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23a2aace'/%3E%3Cstop offset='1' stop-color='%23a2aace' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
   background-attachment: fixed;
-  background-size: cover;
-  /* background by SVGBackgrounds.com */
+  background-size: cover; /* background by SVGBackgrounds.com */
   @media (max-width: 900px) {
     width: 100%;
     padding-left: 30px;
@@ -82,6 +81,9 @@ const ImgContainer = styled.div`
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 900px) {
     maxHeight: 60vh;
+  }
+  @media (max-width: 400px) {
+    display: none;
   }
 `
 

@@ -42,9 +42,18 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        file(relativePath: { eq: "logo/Logo - Alternate Layout - White.png" }) {
+        file(
+          relativePath: { eq: "logo/Logo - Alternate Layout - Terracotta.png" }
+        ) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(
+              maxWidth: 300
+              traceSVG: {
+                color: "#ec7d64"
+                turnPolicy: TURNPOLICY_MINORITY
+                blackOnWhite: true
+              }
+            ) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }

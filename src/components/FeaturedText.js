@@ -2,6 +2,7 @@ import React, { Children } from 'react'
 import { scale, rhythm } from '../utils/typography'
 import styled, { keyframes } from 'styled-components'
 import Badge from './Badge'
+import AppleBadge from './Badge-Apple'
 import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
@@ -143,19 +144,20 @@ export default class FeaturedText extends React.Component {
         </h3>
 
         <Badge />
-        <Link
+        {/* <AppleBadge /> */}
+        {/* <Link
           to={'/'}
           style={{
             color: '#fff',
-            textDecoration: 'underline',
+            // textDecoration: 'underline',
             paddingTop: rhythm(1),
             maxWidth: rhythm(24),
-            textAlign: 'left',
+            textAlign: 'left'
           }}
           activeStyle={{ color: '#161925' }}
         >
           or sign up to the newsletter to know when the iOS version will launch
-        </Link>
+        </Link> */}
       </Wrapper>
     )
   }

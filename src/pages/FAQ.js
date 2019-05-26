@@ -46,7 +46,7 @@ class FAQ extends React.Component {
         />
         <Nav />
         <Container
-          width={rhythm(24)}
+          width={rhythm(30)}
           paddingLeft={rhythm(3)}
           paddingRight={rhythm(3)}
         >

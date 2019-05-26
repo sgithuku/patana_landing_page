@@ -55,12 +55,11 @@ class About extends React.Component {
           <h1>About Patana</h1>
           <p>
             Patana is a little app built to help you better manage and build
-            your relationships.
+            your relationships with your friends, colleagues, and family.
           </p>
           <p>
-            It is currently available on <Link to={'#'}>Android</Link> and
-            should be out on iOS in the coming months. Sign up below to be first
-            in line!
+            It is available on <Link to={'#'}>Android</Link> and
+            <Link to={'#'}> iOS</Link>.
           </p>
         </Container>
         <Contact />

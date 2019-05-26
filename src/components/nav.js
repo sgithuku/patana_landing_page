@@ -90,14 +90,14 @@ class Nav extends React.Component {
             >
               FAQ
             </StyledLink>
-            {/* <StyledLink
+            <StyledLink
               activeStyle={{
                 color: '#ec7d64',
               }}
               to={'/Blog'}
             >
               Blog
-            </StyledLink> */}
+            </StyledLink>
           </Links>
           <LogoHolder>
             <Logo />

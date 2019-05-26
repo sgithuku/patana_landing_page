@@ -69,17 +69,19 @@ const BlockRight = styled.div`
 const BlockText = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: center;
   color: #fff;
   text-align: left;
   max-width: ${props => props.maxWidth};
-  @media (max-width: 700px) {
-    /* text-align: center; */
+  > h3 {
+    display: flex;
   }
 `
 
 const BlockTextRight = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: center;
   /* max-width: 30vw; */
   align-items: flex-start;
   text-align: left;
@@ -88,12 +90,7 @@ const BlockTextRight = styled.div`
     display: flex;
   }
   @media (max-width: 700px) {
-    /* text-align: center; */
     align-items: center;
-
-    > h3 {
-      /* text-align: center !important; */
-    }
   }
 `
 
@@ -187,8 +184,8 @@ class Features extends React.Component {
               Made with love
             </h3>
             <p>
-              Patana is designed, developed, and maintained to (hopefully) help
-              you build better relationships with the people that matter most.
+              Patana is designed, developed, and maintained to help you build
+              better relationships with the people that matter most.
             </p>
           </BlockTextRight>
         </Block>

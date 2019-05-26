@@ -17,7 +17,7 @@ To avoid another Christmas of such conversations, I decided that I had to build 
 
 Over the last decade (or more even), my friends have moved from MSN/Yahoo to Facebook and now to Instagram through school, university and our careers. From having one-to-one interactions with our friends on a regular basis, we find ourselves more likely to communicate by sharing an update on Instagram than picking up the phone or sending a message. We know all about our latest holidays but have little idea about what's truly going on in each others' lives.
 
-### What is the eventual goal?
+### What is the goal?
 
 <!-- To be honest, I couldn't tell you. I've taken one approach to building this first version of Patana and would like to see whether this is an itch that can be addressed with something like this. -->
 

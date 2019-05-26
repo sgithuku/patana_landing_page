@@ -2,7 +2,7 @@ import React, { Children } from 'react'
 import { scale, rhythm } from '../utils/typography'
 import styled, { keyframes } from 'styled-components'
 import Badge from './Badge'
-import AppleBadge from './Badge-Apple'
+import AppleBadge from './BadgeApple'
 import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
@@ -66,36 +66,36 @@ const FrameHolder = styled.span`
   /* text-indent: 5px; */
   display: block;
   & span:nth-child(1) {
-    animation: 15s ${show} linear infinite;
+    animation: 30s ${show} linear infinite;
     animation-delay: 0s;
     opacity: 0;
     overflow: hidden;
     position: absolute;
   }
   & span:nth-child(2) {
-    animation: 15s ${show} linear infinite;
-    animation-delay: 3s;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-  }
-  & span:nth-child(3) {
-    animation: 15s ${show} linear infinite;
+    animation: 30s ${show} linear infinite;
     animation-delay: 6s;
     opacity: 0;
     overflow: hidden;
     position: absolute;
   }
+  & span:nth-child(3) {
+    animation: 30s ${show} linear infinite;
+    animation-delay: 12s;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+  }
   & span:nth-child(4) {
-    animation: 15s ${show} linear infinite;
-    animation-delay: 9s;
+    animation: 30s ${show} linear infinite;
+    animation-delay: 18s;
     opacity: 0;
     overflow: hidden;
     position: absolute;
   }
   & span:nth-child(5) {
-    animation: 15s ${show} linear infinite;
-    animation-delay: 12s;
+    animation: 30s ${show} linear infinite;
+    animation-delay: 24s;
     opacity: 0;
     overflow: hidden;
     position: absolute;
@@ -144,7 +144,7 @@ export default class FeaturedText extends React.Component {
         </h3>
 
         <Badge />
-        {/* <AppleBadge /> */}
+        <AppleBadge />
         {/* <Link
           to={'/'}
           style={{

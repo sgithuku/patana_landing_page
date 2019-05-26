@@ -37,7 +37,7 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        file(relativePath: { eq: "AppleBadge.svg" }) {
+        file(relativePath: { eq: "AppleBadge.png" }) {
           childImageSharp {
             fluid(maxWidth: 360) {
               ...GatsbyImageSharpFluid

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { rhythm } from "../utils/typography";
 import Nav from "../components/nav";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 const Wrapper = styled.div`
   display: flex;

@@ -15,6 +15,7 @@ const FooterContainer = styled.div`
   background-color: #161925;
   color: grey;
   align-items: center;
+  justify-content: center;
   font-size: 12px;
 `;
 const StyledLink = styled(Link)`

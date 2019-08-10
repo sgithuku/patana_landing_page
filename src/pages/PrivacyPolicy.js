@@ -29,7 +29,11 @@ const Container = styled.div`
 const PrivacyPolicy = () => (
   <Wrapper>
     <Nav />
-    <Container paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
+    <Container
+      paddingLeft={rhythm(3)}
+      paddingRight={rhythm(3)}
+      width={rhythm(30)}
+    >
       <h2 id="privacy-policy-for-patana">Patana Privacy Policy</h2>
       <p>
         At Patana, accessible from https://patana.app and our mobile app,

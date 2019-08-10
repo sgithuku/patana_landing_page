@@ -13,17 +13,23 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+  padding-left: ${props => props.paddingLeft};
+  padding-right: ${props => props.paddingRight};
+  flex-direction: row;
+  flex-flow: column wrap;
   padding-top: 50px;
-  justify-content: center;
+  min-height: 90vh;
   width: ${props => props.width};
-  margin: 0 auto;
-  background-color: #ffffff;
+  max-width: 100%;
+  @media (max-width: 400px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
-
 const PrivacyPolicy = () => (
   <Wrapper>
     <Nav />
-    <Container width={rhythm(36)}>
+    <Container paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
       <h2 id="privacy-policy-for-patana">Patana Privacy Policy</h2>
       <p>
         At Patana, accessible from https://patana.app and our mobile app,

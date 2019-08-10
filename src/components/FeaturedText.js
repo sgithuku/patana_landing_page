@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
-import { scale, rhythm } from '../utils/typography'
-import styled, { keyframes } from 'styled-components'
-import Badge from './Badge'
-import AppleBadge from './BadgeApple'
-import { Link } from 'gatsby'
+import React, { Children } from "react";
+import { scale, rhythm } from "../utils/typography";
+import styled, { keyframes } from "styled-components";
+import Badge from "./Badge";
+import AppleBadge from "./BadgeApple";
+import { Link } from "gatsby";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     }
     justify-content: space-between;
   }
-`
+`;
 
 const Header = styled.h2`
   color: #161925;
@@ -33,7 +33,7 @@ const Header = styled.h2`
     min-width: 0;
     font-size: 1.5rem;
   }
-`
+`;
 
 const show = keyframes`
   0%{
@@ -60,7 +60,7 @@ const show = keyframes`
     display: none;
     
   }
-`
+`;
 
 const FrameHolder = styled.span`
   /* text-indent: 5px; */
@@ -100,7 +100,7 @@ const FrameHolder = styled.span`
     overflow: hidden;
     position: absolute;
   }
-`
+`;
 
 export default class FeaturedText extends React.Component {
   render() {
@@ -109,32 +109,32 @@ export default class FeaturedText extends React.Component {
         <Header maxWidth={rhythm(24)}>Build better relationships.</Header>
         <h3
           style={{
-            color: '#161925',
+            color: "#161925",
             maxWidth: rhythm(24),
-            textAlign: 'left',
-            fontWeight: '300',
-            paddingBottom: rhythm(1),
+            textAlign: "left",
+            fontWeight: "300",
+            paddingBottom: rhythm(1)
           }}
         >
-          Patana is an android app that helps you remember{' '}
+          Patana is an app that helps you remember{" "}
           <FrameHolder>
             <span>
               <b>to call your granny.</b>
             </span>
             <span>
-              {' '}
+              {" "}
               <b>to check in with your friend abroad.</b>
             </span>
             <span>
-              {' '}
+              {" "}
               <b>to text your partner.</b>
             </span>
             <span>
-              {' '}
+              {" "}
               <b>to call your key customer.</b>
             </span>
             <span>
-              {' '}
+              {" "}
               <b>
                 to message that barista you met at the coffee shop that one
                 time.
@@ -159,6 +159,6 @@ export default class FeaturedText extends React.Component {
           or sign up to the newsletter to know when the iOS version will launch
         </Link> */}
       </Wrapper>
-    )
+    );
   }
 }

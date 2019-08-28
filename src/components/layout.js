@@ -1,22 +1,22 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import { Link, graphql } from "gatsby";
 // import '../components/splitStyles.css'
-import styled from 'styled-components'
-import { rhythm, scale } from '../utils/typography'
-import get from 'lodash/get'
-import Nav from './nav'
-import Features from './features'
-import Contact from './Contact'
-import Footer from './Footer'
-import HeaderImage from './HeaderImage'
-import Badge from './Badge'
-import FeaturedText from './FeaturedText'
+import styled from "styled-components";
+import { rhythm, scale } from "../utils/typography";
+import get from "lodash/get";
+import Nav from "./nav";
+import Features from "./features";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import HeaderImage from "./HeaderImage";
+import Badge from "./Badge";
+import FeaturedText from "./FeaturedText";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ const Container = styled.div`
     /* flex-direction: column; */
     flex-flow: column-reverse nowrap;
   }
-`
+`;
 
 const Feature = styled.div`
   > h2 {
@@ -73,11 +73,9 @@ const Feature = styled.div`
       /* text-align: center; */
     }
   }
-`
+`;
 
 const ImgContainer = styled.div`
-  flex-grow: 1;
-  margin: 0 auto;
   /* margin-left: ${props => props.marginLeft}; */
   @media (max-width: 900px) {
     maxHeight: 60vh;
@@ -85,7 +83,7 @@ const ImgContainer = styled.div`
   @media (max-width: 400px) {
     display: none;
   }
-`
+`;
 
 const Post = styled.div`
   display: flex;
@@ -101,29 +99,29 @@ const Post = styled.div`
   margin: 0 auto;
   color: #161925;
   /* background-color: #fff; */
-`
+`;
 
 // https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles#39196525
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { location, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
     // const mockup = get(this, 'props.data.mockup.childImageSharp.fluid')
     // console.log('blogindex', this.props, mockup)
     // console.log('this.state', this.state)
     // const timer = (this.setState, 3000, { phrase: phrase + 1 })
 
-    let header
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            backgroundColor: '#161925',
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            backgroundColor: "#161925"
           }}
         >
           <Nav />
@@ -141,15 +139,15 @@ class Template extends React.Component {
 
           <Footer />
         </div>
-      )
+      );
     } else {
       header = (
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            backgroundColor: '#fff',
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            backgroundColor: "#fff"
           }}
         >
           <Nav />
@@ -157,10 +155,10 @@ class Template extends React.Component {
           <Contact />
           <Footer />
         </div>
-      )
+      );
     }
-    return <Wrapper>{header}</Wrapper>
+    return <Wrapper>{header}</Wrapper>;
   }
 }
 
-export default Template
+export default Template;

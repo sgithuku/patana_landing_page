@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { rhythm, scale } from '../utils/typography'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import { rhythm, scale } from "../utils/typography";
 // import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const ContactContainer = styled.div`
@@ -28,7 +28,7 @@ const ContactContainer = styled.div`
   @media (max-width: 600px) {
     padding: 30px;
   }
-`
+`;
 const InputContainer = styled.div`
   color: #fff;
   display: flex;
@@ -38,7 +38,7 @@ const InputContainer = styled.div`
   justify-content: flex-start;
   width: 100%;
   max-width: ${props => props.maxWidth};
-`
+`;
 
 const Input = styled.input`
   padding: 0.5em;
@@ -49,7 +49,7 @@ const Input = styled.input`
   /* max-width: ${props => props.maxWidth}; */
   display: inline-flex;
   flex-grow: 3;
-`
+`;
 
 const Button = styled.a`
   display: inline-flex;
@@ -61,7 +61,7 @@ const Button = styled.a`
   flex-grow: 1;
   justify-content: center;
   font-weight: 700;
-`
+`;
 
 const Header = styled.h3`
   color: #fff;
@@ -69,24 +69,24 @@ const Header = styled.h3`
   /* text-align: center; */
   /* display: block;
   flex-grow: 1; */
-`
+`;
 
 const PostList = styled.div`
   padding-top: 50px;
   align-self: center;
   justify-self: center;
   max-width: ${props => props.maxWidth};
-`
+`;
 
 class Contact extends React.Component {
   constructor(props) {
-    super(props)
-    // this.email = React.createRef()
+    super(props);
+    // this.input = React.createRef();
   }
 
   render() {
     // console.log('contact page: ', this.props)
-    const { location, children } = this.props
+    const { location, children } = this.props;
     // const { email, listFields } = this.state
 
     return (
@@ -97,17 +97,17 @@ class Contact extends React.Component {
         <InputContainer maxWidth={rhythm(24)}>
           <Input
             placeholder="Email address"
-            innerRef={x => {
-              this.input = x
-            }}
-            onMouseEnter={() => this.input.focus()}
+            // innerRef={x => {
+            //   this.input = x;
+            // }}
+            // onMouseEnter={() => this.input.focus()}
           />
           <Button href="http://eepurl.com/dMse0k">Sign up</Button>
         </InputContainer>
         <PostList maxWidth={rhythm(24)}>{children}</PostList>
       </ContactContainer>
-    )
+    );
   }
 }
 
-export default Contact
+export default Contact;

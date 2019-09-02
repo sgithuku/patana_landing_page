@@ -5,10 +5,8 @@ import { rhythm, scale } from '../utils/typography'
 import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
-  /* float: right; */
   display: inline-flex;
-  height: inherit;
-  max-height: 50px;
+  height: 50px;
   @media (max-width: 600px) {
     padding: 0 !important;
   }
@@ -17,7 +15,7 @@ const StyledLink = styled(Link)`
 const AppleBadge = ({ data }) => (
   <StyledLink to={'/'}>
     <Img
-      fluid={data.file.childImageSharp.fluid}
+      fixed={data.file.childImageSharp.fixed}
       imgStyle={{
         width: rhythm(6),
         height: 'auto',
@@ -39,8 +37,8 @@ export default props => (
       query {
         file(relativePath: { eq: "AppleBadge.png" }) {
           childImageSharp {
-            fluid(maxWidth: 360) {
-              ...GatsbyImageSharpFluid
+            fixed(height: 50) {
+              ...GatsbyImageSharpFixed_tracedSVG
             }
           }
         }

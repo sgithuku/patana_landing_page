@@ -25,10 +25,6 @@ const Container = styled.div`
   min-height: 90vh;
   width: ${props => props.width};
   max-width: 100%;
-  @media (max-width: 400px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 `
 const PostList = styled.div`
   padding-top: 50px;

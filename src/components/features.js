@@ -1,14 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
-import highfive from "../assets/highfive.png";
-import message from "../assets/chatting.png";
-import group from "../assets/selfie.svg";
-import { rhythm, scale } from "../utils/typography";
-import Brain from "../assets/icons/brain.svg";
-import Bell from "../assets/icons/bell.svg";
+import React from 'react'
+import styled from 'styled-components'
+import highfive from '../assets/highfive.png'
+import message from '../assets/chatting.png'
+import group from '../assets/selfie.svg'
+import { rhythm, scale } from '../utils/typography'
+import Brain from '../assets/icons/brain.svg'
+import Bell from '../assets/icons/bell.svg'
 // import Calendar from '../assets/icons/calendar.svg'
-import Heart from "../assets/icons/heart.svg";
+import Heart from '../assets/icons/heart.svg'
 
 const FeaturesContainer = styled.div`
   border-top: 2px solid #161925;
@@ -27,7 +26,7 @@ const FeaturesContainer = styled.div`
     padding-right: 0;
     flex-direction: column;
   }
-`;
+`
 
 const Block = styled.div`
   padding-top: 10vh;
@@ -44,8 +43,10 @@ const Block = styled.div`
   }
   @media (max-width: 700px) {
     flex-flow: column nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
   }
-`;
+`
 const BlockRight = styled.div`
   padding-top: 10vh;
   padding-bottom: 10vh;
@@ -61,8 +62,10 @@ const BlockRight = styled.div`
   width: 100%;
   @media (max-width: 700px) {
     flex-flow: column-reverse nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
   }
-`;
+`
 const BlockText = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,7 +77,7 @@ const BlockText = styled.div`
     display: flex;
     color: #ec7d64;
   }
-`;
+`
 
 const BlockTextRight = styled.div`
   display: flex;
@@ -90,12 +93,12 @@ const BlockTextRight = styled.div`
   @media (max-width: 700px) {
     align-items: center;
   }
-`;
+`
 
 const Icon = styled.img`
   height: auto;
   max-width: 40vw;
-`;
+`
 
 const SVG = styled.img`
   height: auto;
@@ -104,7 +107,7 @@ const SVG = styled.img`
   @media (max-width: 400px) {
     display: none;
   }
-`;
+`
 const SVGO = styled.img`
   height: auto;
   min-width: 40px;
@@ -112,7 +115,7 @@ const SVGO = styled.img`
   @media (max-width: 400px) {
     display: none;
   }
-`;
+`
 
 // const text = styled.p`
 //   text-align: center;
@@ -158,7 +161,7 @@ class Features extends React.Component {
               Store your notes, memories, and ideas. Privately.
             </h3>
             <p>
-              More than just keeping up with your friends,{" "}
+              More than just keeping up with your friends,{' '}
               <b>Patana helps you remember important things</b> - whether it was
               that funny photo, a great gift idea you don't want to forget, or
               even a little reminder that your boss is a big football fan.
@@ -168,7 +171,7 @@ class Features extends React.Component {
               <b> easily organised and update contacts within the app.</b>
             </p>
             <p>
-              This information is all stored <b>securely</b> for you only.{" "}
+              This information is all stored <b>securely</b> for you only.{' '}
             </p>
             {/* <ul>
               <li>
@@ -196,8 +199,8 @@ class Features extends React.Component {
           </BlockTextRight>
         </Block>
       </FeaturesContainer>
-    );
+    )
   }
 }
 
-export default Features;
+export default Features

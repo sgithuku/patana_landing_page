@@ -1,9 +1,9 @@
-import React, { Children } from "react";
-import { scale, rhythm } from "../utils/typography";
-import styled, { keyframes } from "styled-components";
-import Badge from "./Badge";
-import AppleBadge from "./BadgeApple";
-import { Link } from "gatsby";
+import React, { Children } from 'react'
+import { scale, rhythm } from '../utils/typography'
+import styled, { keyframes } from 'styled-components'
+import Badge from './Badge'
+import AppleBadge from './BadgeApple'
+import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,18 +22,38 @@ const Wrapper = styled.div`
     }
     justify-content: space-between;
   }
-`;
+`
 
 const Header = styled.h2`
-  color: #161925;
+  color: #fff;
   text-align: left;
   max-width: ${props => props.maxWidth};
   min-width: 500px;
   @media (max-width: 900px) {
     min-width: 0;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
   }
-`;
+  @media (max-width: 400px) {
+    text-align: center;
+  }
+`
+const Subtitle = styled.h3`
+  text-align: left;
+  max-width: ${props => props.maxWidth};
+  padding-bottom: ${props => props.paddingBottom};
+  color: #fff;
+  @media (max-width: 400px) {
+    justify-content: center;
+    text-align: center;
+  }
+`
+
+const BadgeHolder = styled.div`
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+`
 
 const show = keyframes`
   0%{
@@ -60,7 +80,7 @@ const show = keyframes`
     display: none;
     
   }
-`;
+`
 
 const FrameHolder = styled.span`
   /* text-indent: 5px; */
@@ -100,65 +120,29 @@ const FrameHolder = styled.span`
     overflow: hidden;
     position: absolute;
   }
-`;
+`
 
 export default class FeaturedText extends React.Component {
   render() {
     return (
       <Wrapper>
         <Header maxWidth={rhythm(24)}>Build better relationships.</Header>
-        <h3
-          style={{
-            color: "#161925",
-            maxWidth: rhythm(24),
-            textAlign: "left",
-            fontWeight: "300",
-            paddingBottom: rhythm(1)
-          }}
-        >
-          Patana is an app that helps you remember{" "}
+        <Subtitle maxWidth={rhythm(16)} paddingBottom={rhythm(1)}>
+          Patana is an app that helps you remember{' '}
           <FrameHolder>
-            <span>
-              <b>to call your granny.</b>
-            </span>
-            <span>
-              {" "}
-              <b>to check in with your friend abroad.</b>
-            </span>
-            <span>
-              {" "}
-              <b>to text your partner.</b>
-            </span>
-            <span>
-              {" "}
-              <b>to call your key customer.</b>
-            </span>
-            <span>
-              {" "}
-              <b>
-                to message that barista you met at the coffee shop that one
-                time.
-              </b>
-            </span>
+            <span>to call your granny.</span>
+            <span> to check in with your friend abroad.</span>
+            <span> to text your partner.</span>
+            <span> to call your key customer.</span>
+            <span> to message that guy you met on the bus that one time.</span>
           </FrameHolder>
-        </h3>
+        </Subtitle>
 
-        <Badge />
-        <AppleBadge />
-        {/* <Link
-          to={'/'}
-          style={{
-            color: '#fff',
-            // textDecoration: 'underline',
-            paddingTop: rhythm(1),
-            maxWidth: rhythm(24),
-            textAlign: 'left'
-          }}
-          activeStyle={{ color: '#161925' }}
-        >
-          or sign up to the newsletter to know when the iOS version will launch
-        </Link> */}
+        <BadgeHolder>
+          <Badge />
+          <AppleBadge />
+        </BadgeHolder>
       </Wrapper>
-    );
+    )
   }
 }

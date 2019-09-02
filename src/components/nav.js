@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
-import { rhythm, scale } from "../utils/typography";
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import { rhythm, scale } from '../utils/typography'
 // import logo from '../assets/logo/Wordmark - White.png'
-import Logo from "./Logo";
+import Logo from './Logo'
 
 const MenuContainer = styled.div`
   display: block;
@@ -12,14 +12,13 @@ const MenuContainer = styled.div`
   clear: both;
   position: relative;
   font-size: 16px;
-  border-bottom: 2px solid #ec7d64;
-`;
+  padding-top: 10px;
+`
 const Menu = styled.div`
   display: inline-flex;
-  /* flex-direction: row; */
   flex-flow: row-reverse wrap;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   padding-left: 4.5rem;
   padding-right: 4.5rem;
   width: 100%;
@@ -27,11 +26,11 @@ const Menu = styled.div`
     padding: 10px 0;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-items: center;
     align-items: center;
   }
-`;
+`
 
 const StyledLink = styled(Link)`
   color: #fff;
@@ -44,12 +43,13 @@ const StyledLink = styled(Link)`
   @media (max-width: 600px) {
     padding: 10px 10px;
   }
-`;
+`
 
 const Links = styled.div`
   /* display: inline-flex; */
   align-self: center;
-`;
+  height: 50px;
+`
 
 const LogoHolder = styled.div`
   flex-grow: 1;
@@ -58,7 +58,7 @@ const LogoHolder = styled.div`
   @media (max-width: 900px) {
     align-self: center;
   }
-`;
+`
 
 class Nav extends React.Component {
   render() {
@@ -68,33 +68,33 @@ class Nav extends React.Component {
           <Links>
             <StyledLink
               activeStyle={{
-                color: "#ec7d64"
+                color: '#ec7d64',
               }}
-              to={"/"}
+              to={'/'}
             >
               Home
             </StyledLink>
             <StyledLink
               activeStyle={{
-                color: "#ec7d64"
+                color: '#ec7d64',
               }}
-              to={"/About"}
+              to={'/About'}
             >
               About
             </StyledLink>
             <StyledLink
               activeStyle={{
-                color: "#ec7d64"
+                color: '#ec7d64',
               }}
-              to={"/FAQ"}
+              to={'/FAQ'}
             >
               FAQ
             </StyledLink>
             <StyledLink
               activeStyle={{
-                color: "#ec7d64"
+                color: '#ec7d64',
               }}
-              to={"/Blog"}
+              to={'/Blog'}
             >
               Blog
             </StyledLink>
@@ -104,8 +104,8 @@ class Nav extends React.Component {
           </LogoHolder>
         </Menu>
       </MenuContainer>
-    );
+    )
   }
 }
 
-export default Nav;
+export default Nav

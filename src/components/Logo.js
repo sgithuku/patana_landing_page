@@ -1,42 +1,35 @@
-import React from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
-import Img from "gatsby-image";
-import styled from "styled-components";
+import React from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
   /* float: right; */
   display: inline-block;
-  height: inherit;
-  max-height: 50px;
+  height: 50px;
   @media (max-width: 600px) {
     padding: 0 !important;
   }
-`;
+`
 
 const Logo = ({ data }) => (
-  <StyledLink to={"/"}>
+  <StyledLink to={'/'}>
     <Img
-      fluid={data.file.childImageSharp.fluid}
+      fixed={data.file.childImageSharp.fixed}
       imgStyle={{
-        width: "auto",
-        marginTop: "10px",
-        marginRight: "30px",
-        padding: "0",
-        height: "32px"
+        marginRight: '30px',
+        marginBottom: '0px',
+        padding: '0',
       }}
       placeholderStyle={{
-        maxWidth: "100%",
-        // height: 'auto',
-        // width: 'auto',
-        display: "block",
-        position: "relative",
-        // maxWidth: '13.5rem',
-        // justifySelf: 'flexStart',
-        padding: "0"
+        maxWidth: '100%',
+        display: 'block',
+        position: 'relative',
+        padding: '0',
       }}
     />
   </StyledLink>
-);
+)
 
 export default props => (
   <StaticQuery
@@ -44,15 +37,8 @@ export default props => (
       query {
         file(relativePath: { eq: "logo/patana.png" }) {
           childImageSharp {
-            fluid(
-              maxWidth: 300
-              traceSVG: {
-                color: "#ec7d64"
-                turnPolicy: TURNPOLICY_MINORITY
-                blackOnWhite: true
-              }
-            ) {
-              ...GatsbyImageSharpFluid_withWebp
+            fixed(height: 32) {
+              ...GatsbyImageSharpFixed_tracedSVG
             }
           }
         }
@@ -60,4 +46,4 @@ export default props => (
     `}
     render={data => <Logo data={data} {...props} />}
   />
-);
+)

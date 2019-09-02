@@ -21,8 +21,7 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-  /* padding-left: ${props => props.paddingLeft};
-  padding-right: ${props => props.paddingRight}; */
+  /* padding-left: ${props => props.paddingLeft}; */
   /* padding-right: ${props => props.paddingRight}; */
   flex-direction: row;
   flex-flow: column wrap;
@@ -32,7 +31,10 @@ const Container = styled.div`
   min-height: 90vh;
   width: ${props => props.width};
   max-width: 100%;
-
+  @media (max-width: 400px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `
 
 class About extends React.Component {

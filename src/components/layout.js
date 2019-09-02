@@ -1,24 +1,31 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import { Link, graphql } from "gatsby";
 // import '../components/splitStyles.css'
-import styled from 'styled-components'
-import { rhythm, scale } from '../utils/typography'
-import get from 'lodash/get'
-import Nav from './nav'
-import Features from './features'
-import Contact from './Contact'
-import Footer from './Footer'
-import HeaderImage from './HeaderImage'
-import Badge from './Badge'
-import FeaturedText from './FeaturedText'
+import styled from "styled-components";
+import { rhythm, scale } from "../utils/typography";
+import get from "lodash/get";
+import Nav from "./nav";
+import Features from "./features";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import HeaderImage from "./HeaderImage";
+import Badge from "./Badge";
+import FeaturedText from "./FeaturedText";
+import bgimg from "../assets/bg/Background-img-resized.png";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #ec7d64;
-`
+`;
 
 const Container = styled.div`
+  background-image: url(${bgimg});
+  background-repeat: no-repeat;
+  background-attachnment: fixed;
+  background-position: right center;
+  background-clip: padding-box;
+
   display: flex;
   padding-left: 30px;
   padding-right: 30px;
@@ -29,9 +36,10 @@ const Container = styled.div`
   align-items: center;
   height: 90vh;
   min-height: 90vh;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   @media (max-width: 900px) {
+    background-image: none;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -42,7 +50,7 @@ const Container = styled.div`
     /* flex-direction: column; */
     flex-flow: column-reverse nowrap;
   }
-`
+`;
 
 const Feature = styled.div`
   > h2 {
@@ -55,7 +63,6 @@ const Feature = styled.div`
     flex-flow: column nowrap;
     width: 100%;
     margin: 0 auto;
-    align-items: center;
     justify-content: flex-start;
     order: 1;
     padding-top: 30px;
@@ -71,7 +78,7 @@ const Feature = styled.div`
       /* text-align: center; */
     }
   }
-`
+`;
 
 const ImgContainer = styled.div`
   /* margin-left: ${props => props.marginLeft}; */
@@ -81,7 +88,7 @@ const ImgContainer = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
-`
+`;
 
 const Post = styled.div`
   display: flex;
@@ -101,28 +108,28 @@ const Post = styled.div`
     padding-left: 30px;
     padding-right: 30px;
   }
-`
+`;
 
 // https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles#39196525
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { location, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
     // const mockup = get(this, 'props.data.mockup.childImageSharp.fluid')
     // console.log('blogindex', this.props, mockup)
     // console.log('this.state', this.state)
     // const timer = (this.setState, 3000, { phrase: phrase + 1 })
 
-    let header
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
+            display: "flex",
+            flexDirection: "column",
+            width: "100%"
           }}
         >
           <Nav />
@@ -130,25 +137,21 @@ class Template extends React.Component {
             <Feature>
               <FeaturedText />
             </Feature>
-
-            <ImgContainer>
-              <HeaderImage />
-            </ImgContainer>
           </Container>
           <Features />
           <Contact>{children}</Contact>
 
           <Footer />
         </div>
-      )
+      );
     } else {
       header = (
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            backgroundColor: '#fff',
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            backgroundColor: "#fff"
           }}
         >
           <Nav />
@@ -156,10 +159,10 @@ class Template extends React.Component {
           <Contact />
           <Footer />
         </div>
-      )
+      );
     }
-    return <Wrapper>{header}</Wrapper>
+    return <Wrapper>{header}</Wrapper>;
   }
 }
 
-export default Template
+export default Template;

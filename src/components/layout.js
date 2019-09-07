@@ -12,20 +12,17 @@ import HeaderImage from "./HeaderImage";
 import Badge from "./Badge";
 import FeaturedText from "./FeaturedText";
 import bgimg from "../assets/bg/Background-img-resized.png";
+import AppleBadge from "./BadgeApple";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #ec7d64;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f74c25' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
 `;
 
 const Container = styled.div`
-  background-image: url(${bgimg});
-  background-repeat: no-repeat;
-  background-attachnment: fixed;
-  background-position: right center;
-  background-clip: padding-box;
-
   display: flex;
   padding-left: 30px;
   padding-right: 30px;
@@ -36,10 +33,9 @@ const Container = styled.div`
   align-items: center;
   height: 90vh;
   min-height: 90vh;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   @media (max-width: 900px) {
-    background-image: none;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -63,6 +59,7 @@ const Feature = styled.div`
     flex-flow: column nowrap;
     width: 100%;
     margin: 0 auto;
+    align-items: center;
     justify-content: flex-start;
     order: 1;
     padding-top: 30px;
@@ -102,11 +99,33 @@ const Post = styled.div`
   justify-content: center;
   /* width: 100%; */
   margin: 0 auto;
-  color: #fff;
   @media (max-width: 400px) {
     display: none;
     padding-left: 30px;
     padding-right: 30px;
+  }
+`;
+
+const BadgeHolder = styled.div`
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Download = styled.div`
+  background-image: linear-gradient(180deg, #161925, #373547);
+  border-top: 3px;
+  border-bottom: 3px;
+  border-color: #fff;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  > h2 {
+    color: #fff;
+    text-align: center;
   }
 `;
 
@@ -137,7 +156,18 @@ class Template extends React.Component {
             <Feature>
               <FeaturedText />
             </Feature>
+
+            <ImgContainer>
+              <HeaderImage />
+            </ImgContainer>
           </Container>
+          <Download id="Download">
+            <h2>Download the iOS and Android apps</h2>
+            <BadgeHolder>
+              <Badge />
+              <AppleBadge />
+            </BadgeHolder>
+          </Download>
           <Features />
           <Contact>{children}</Contact>
 

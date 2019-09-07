@@ -1,26 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: 'Patana - Build better relationships',
-    author: 'Shaun Githuku',
+    title: "Patana - Build better relationships",
+    author: "Shaun Githuku",
     description:
-      'Patana is an app built to help you build better relationships',
-    siteUrl: 'https://patana.app/',
+      "Patana is an app built to help you build better relationships",
+    siteUrl: "https://patana.app/"
   },
-  pathPrefix: '/blog',
+  pathPrefix: "/blog",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: "pages"
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets`,
-      },
+        path: `${__dirname}/src/assets`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -29,20 +29,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 720,
-            },
+              maxWidth: 720
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants"
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -55,7 +55,7 @@ module.exports = {
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true,
+        respectDNT: true
         // Avoids sending pageview hits from custom paths
         //  exclude: ["/preview/**", "/do-not-track/me/too/"],
         // Enables Google Optimize using your container Id
@@ -68,14 +68,14 @@ module.exports = {
         // sampleRate: 5,
         // siteSpeedSampleRate: 10,
         // cookieDomain: 'example.com',
-      },
+      }
     },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
         // displayName: false,
-      },
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -87,16 +87,16 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#161925`,
         display: `minimal-ui`,
-        icon: `src/assets/ic_launcher.png`,
-      },
+        icon: `src/assets/Icon.png`
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-  ],
-}
+        pathToConfigModule: "src/utils/typography"
+      }
+    }
+  ]
+};

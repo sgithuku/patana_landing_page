@@ -4,7 +4,7 @@ import highfive from '../assets/highfive.png'
 import message from '../assets/chatting.png'
 import calendar from '../assets/bg/Calendar.png'
 import group from '../assets/selfie.svg'
-import video from '../assets/bg/appVideo.mp4'
+// import video from '../assets/bg/appVideo.mp4'
 import frame from '../assets/iPhone frame - transparent.png'
 import { rhythm, scale } from '../utils/typography'
 // import Brain from "../assets/icons/brain.svg";
@@ -195,10 +195,6 @@ class Features extends React.Component {
             </ul> */}
             <p />
           </BlockText>
-          <Frameholder>
-            <DeviceFrame src={frame} />
-            <Vid src={video} autoPlay loop muted />
-          </Frameholder>
         </BlockRight>
         <Block paddingLeft={rhythm(3)} paddingRight={rhythm(3)}>
           <Icon src={highfive} />

@@ -1,8 +1,8 @@
-import React, { Children } from "react";
-import { scale, rhythm } from "../utils/typography";
-import styled, { keyframes } from "styled-components";
-
-import { Link } from "gatsby";
+import React, { Children } from 'react'
+import { scale, rhythm } from '../utils/typography'
+import styled, { keyframes } from 'styled-components'
+import Typical from 'react-typical'
+import { Link } from 'gatsby'
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     }
     justify-content: space-between;
   }
-`;
+`
 
 const Header = styled.h2`
   color: #161925;
@@ -37,7 +37,7 @@ const Header = styled.h2`
   @media (max-width: 400px) {
     text-align: center;
   }
-`;
+`
 const Subtitle = styled.h3`
   text-align: left;
   max-width: ${props => props.maxWidth};
@@ -48,7 +48,7 @@ const Subtitle = styled.h3`
   @media (max-width: 400px) {
     text-align: center;
   }
-`;
+`
 
 const show = keyframes`
   0%{
@@ -75,7 +75,7 @@ const show = keyframes`
     display: none;
     
   }
-`;
+`
 
 const FrameHolder = styled.span`
   display: grid;
@@ -117,7 +117,7 @@ const FrameHolder = styled.span`
     overflow: hidden;
     position: absolute;
   }
-`;
+`
 
 const DownloadButton = styled.button`
   text-align: center;
@@ -141,7 +141,7 @@ const DownloadButton = styled.button`
       font-weight: 400;
     }
   }
-`;
+`
 
 export default class FeaturedText extends React.Component {
   render() {
@@ -149,19 +149,34 @@ export default class FeaturedText extends React.Component {
       <Wrapper>
         <Header maxWidth={rhythm(24)}>Build better relationships.</Header>
         <Subtitle maxWidth={rhythm(24)} paddingBottom={rhythm(1)}>
-          Patana is an app that helps you remember{" "}
+          Patana is an app that helps you remember{' '}
           <FrameHolder>
-            <span> to call your granny.</span>
+            {/* <span> to call your granny.</span>
             <span> to check in with your friend abroad.</span>
             <span> to text your partner.</span>
             <span> to call your key customer.</span>
-            <span> to message that guy you met on the bus that one time.</span>
+            <span> to message that guy you met on the bus that one time.</span> */}
+            <Typical
+              steps={[
+                'to call your granny.',
+                500,
+                'to check in with your friend abroad.',
+                500,
+                'to text your partner.',
+                500,
+                'to call your key customer.',
+                500,
+                'to message that guy you met on the bus that one time.',
+                1000,
+              ]}
+              loop={Infinity}
+            />
           </FrameHolder>
         </Subtitle>
         <DownloadButton paddingHorizontal={rhythm(3)} defaultWidth={rhythm(12)}>
           <Link to="#Download">Download</Link>
         </DownloadButton>
       </Wrapper>
-    );
+    )
   }
 }

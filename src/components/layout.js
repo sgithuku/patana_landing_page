@@ -1,18 +1,18 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 // import '../components/splitStyles.css'
-import styled from "styled-components";
-import { rhythm, scale } from "../utils/typography";
-import get from "lodash/get";
-import Nav from "./nav";
-import Features from "./features";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import HeaderImage from "./HeaderImage";
-import Badge from "./Badge";
-import FeaturedText from "./FeaturedText";
-import bgimg from "../assets/bg/Background-img-resized.png";
-import AppleBadge from "./BadgeApple";
+import styled from 'styled-components'
+import { rhythm, scale } from '../utils/typography'
+import get from 'lodash/get'
+import Nav from './nav'
+import Features from './features'
+import Contact from './Contact'
+import Footer from './Footer'
+import HeaderImage from './HeaderImage'
+import Badge from './Badge'
+import FeaturedText from './FeaturedText'
+import bgimg from '../assets/bg/Background-img-resized.png'
+import AppleBadge from './BadgeApple'
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   background-color: #ec7d64;
   background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f74c25' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ const Container = styled.div`
     /* flex-direction: column; */
     flex-flow: column-reverse nowrap;
   }
-`;
+`
 
 const Feature = styled.div`
   > h2 {
@@ -75,7 +75,7 @@ const Feature = styled.div`
       /* text-align: center; */
     }
   }
-`;
+`
 
 const ImgContainer = styled.div`
   /* margin-left: ${props => props.marginLeft}; */
@@ -85,7 +85,7 @@ const ImgContainer = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
-`;
+`
 
 const Post = styled.div`
   display: flex;
@@ -104,14 +104,15 @@ const Post = styled.div`
     padding-left: 30px;
     padding-right: 30px;
   }
-`;
+`
 
 const BadgeHolder = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
-`;
+  width: ${props => props.width};
+`
 
 const Download = styled.div`
   background-image: linear-gradient(180deg, #161925, #373547);
@@ -127,28 +128,28 @@ const Download = styled.div`
     color: #fff;
     text-align: center;
   }
-`;
+`
 
 // https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles#39196525
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
+    const { location, children } = this.props
+    const rootPath = `${__PATH_PREFIX__}/`
     // const mockup = get(this, 'props.data.mockup.childImageSharp.fluid')
     // console.log('blogindex', this.props, mockup)
     // console.log('this.state', this.state)
     // const timer = (this.setState, 3000, { phrase: phrase + 1 })
 
-    let header;
+    let header
 
     if (location.pathname === rootPath) {
       header = (
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%"
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
           }}
         >
           <Nav />
@@ -163,7 +164,7 @@ class Template extends React.Component {
           </Container>
           <Download id="Download">
             <h2>Download the iOS and Android apps</h2>
-            <BadgeHolder>
+            <BadgeHolder width={rhythm(18)}>
               <Badge />
               <AppleBadge />
             </BadgeHolder>
@@ -173,15 +174,15 @@ class Template extends React.Component {
 
           <Footer />
         </div>
-      );
+      )
     } else {
       header = (
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            backgroundColor: "#fff"
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            backgroundColor: '#fff',
           }}
         >
           <Nav />
@@ -189,10 +190,10 @@ class Template extends React.Component {
           <Contact />
           <Footer />
         </div>
-      );
+      )
     }
-    return <Wrapper>{header}</Wrapper>;
+    return <Wrapper>{header}</Wrapper>
   }
 }
 
-export default Template;
+export default Template

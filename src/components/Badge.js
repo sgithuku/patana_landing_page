@@ -7,6 +7,7 @@ import styled from 'styled-components'
 const StyledLink = styled(Link)`
   display: inline-flex;
   height: 50px;
+  width: inherit;
   @media (max-width: 600px) {
     padding: 0 !important;
   }
@@ -17,7 +18,7 @@ const Badge = ({ data }) => (
     <Img
       fixed={data.file.childImageSharp.fixed}
       imgStyle={{
-        width: rhythm(6),
+        width: rhythm(7),
         height: 'auto',
         alignSelf: 'flex-start',
         paddingLeft: 0,

@@ -169,6 +169,7 @@ export default class FeaturedText extends React.Component {
                 'to message that guy you met on the bus that one time.',
                 1000,
               ]}
+              wrapper='p'
               loop={Infinity}
             />
           </FrameHolder>

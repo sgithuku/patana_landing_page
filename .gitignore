@@ -4,7 +4,7 @@ public
 .DS_Store
 .intermediate-representation/
 .cache/
-yarn.lock
+# yarn.lock
 .travis.yml
 .prettierrc
 # .eslintrc.js

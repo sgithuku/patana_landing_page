@@ -59,6 +59,7 @@ module.exports = {
         siteId: '1',
         matomoUrl: 'https://matomo.kelele.xyz',
         siteUrl: 'https://patana.app',
+        dev: true,
       },
     },
     `gatsby-plugin-feed`,

@@ -57,7 +57,7 @@ module.exports = {
       resolve: `gatsby-plugin-plausible`,
       options: {
         domain: `patana.app`,
-        customDomain: `stats.kelele.xyz`,
+        customDomain: `stats.kelele.xyz/js/plausible.js?original=`,
       },
     },
     `gatsby-plugin-feed`,

@@ -54,12 +54,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-matomo',
+      resolve: `gatsby-plugin-plausible`,
       options: {
-        siteId: '1',
-        matomoUrl: 'https://matomo.kelele.xyz',
-        siteUrl: 'https://patana.app',
-        dev: true,
+        domain: `patana.app`,
+        customDomain: `stats.kelele.xyz`,
       },
     },
     `gatsby-plugin-feed`,
